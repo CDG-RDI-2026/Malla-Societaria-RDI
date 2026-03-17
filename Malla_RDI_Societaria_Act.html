@@ -909,46 +909,79 @@ async function publicarGitHub() {
   btn.textContent = 'Publicando...';
   status.style.display = 'block';
   status.className = 'loading';
-  status.textContent = 'Generando y subiendo a GitHub...';
+  status.textContent = 'Conectando con GitHub...';
 
   try {
     var apiURL = 'https://api.github.com/repos/' + GH_USER + '/' + GH_REPO + '/contents/' + GH_FILE;
-    var headers = { 'Authorization': 'token ' + GH_TOKEN, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' };
+    var headers = {
+      'Authorization': 'token ' + GH_TOKEN,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    };
 
-    var sha = null;
+    // 1. Obtener archivo actual de GitHub (decodificado)
+    status.textContent = 'Descargando archivo actual de GitHub...';
     var getRes = await fetch(apiURL, { headers: headers });
-    if (getRes.ok) { var gj = await getRes.json(); sha = gj.sha; }
+    if (!getRes.ok) throw new Error('No se pudo obtener el archivo: ' + getRes.status);
+    var getJson = await getRes.json();
+    var sha = getJson.sha;
 
-    var htmlContent = generarHTMLActualizado();
-    // Convertir a base64 usando TextEncoder (más robusto para contenido grande)
+    // 2. Decodificar el contenido actual
+    var currentB64 = getJson.content.replace(/
+/g, '');
+    var currentHTML = decodeURIComponent(escape(atob(currentB64)));
+
+    // 3. Reemplazar solo el array SOCIEDADES en el string
+    status.textContent = 'Actualizando datos...';
+    var marca = 'var SOCIEDADES = [';
+    var fin   = '
+];';
+    var si = currentHTML.indexOf(marca);
+    if (si === -1) throw new Error('No se encontró el marcador SOCIEDADES en el archivo.');
+    var ei = currentHTML.indexOf(fin, si) + fin.length;
+    var nuevoHTML = currentHTML.substring(0, si) +
+                   'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' +
+                   currentHTML.substring(ei);
+
+    // 4. Subir el archivo actualizado
+    status.textContent = 'Subiendo a GitHub...';
     var encoder = new TextEncoder();
-    var bytes = encoder.encode(htmlContent);
+    var bytes = encoder.encode(nuevoHTML);
     var binary = '';
-    var chunkSize = 8192;
-    for (var i = 0; i < bytes.length; i += chunkSize) {
-      var chunk = bytes.subarray(i, i + chunkSize);
-      binary += String.fromCharCode.apply(null, chunk);
+    var chunk = 8192;
+    for (var i = 0; i < bytes.length; i += chunk) {
+      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
     }
-    var b64 = btoa(binary);
-    var body = { message: 'Actualizaci\u00f3n malla ' + new Date().toLocaleString('es-CL'), content: b64, branch: GH_BRANCH };
-    if (sha) body.sha = sha;
+    var newB64 = btoa(binary);
+
+    var body = {
+      message: 'Actualización malla ' + new Date().toLocaleString('es-CL'),
+      content: newB64,
+      sha: sha,
+      branch: GH_BRANCH
+    };
 
     var putRes = await fetch(apiURL, { method: 'PUT', headers: headers, body: JSON.stringify(body) });
-
-    if (putRes.ok) {
-      status.className = 'success';
-      status.innerHTML = '\u2705 <strong>\u00a1Publicado con \u00e9xito!</strong> El reporte se actualizar\u00e1 en unos segundos.<br><a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_Societaria.html" target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte \u2192</a>';
-    } else {
+    if (!putRes.ok) {
       var ej = await putRes.json();
       throw new Error(ej.message || 'Error ' + putRes.status);
     }
+
+    status.className = 'success';
+    status.innerHTML = '✅ <strong>¡Publicado con éxito!</strong> El reporte se actualizará en unos segundos.<br>' +
+      '<a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_Societaria_Act.html" ' +
+      'target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte →</a>';
+
   } catch(e) {
     status.className = 'error';
-    status.innerHTML = '\u274c <strong>Error:</strong> ' + e.message;
+    status.innerHTML = '❌ <strong>Error:</strong> ' + e.message;
+    console.error('Error publicando:', e);
   }
+
   btn.disabled = false;
-  btn.textContent = '\u26c5 Publicar en GitHub';
+  btn.textContent = '⛅ Publicar en GitHub';
 }
+
 
 // DESCARGAR HTML
 function exportarHTML() {
