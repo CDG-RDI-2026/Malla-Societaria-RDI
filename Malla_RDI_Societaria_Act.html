@@ -920,17 +920,16 @@ async function publicarGitHub() {
     if (getRes.ok) { var gj = await getRes.json(); sha = gj.sha; }
 
     var htmlContent = generarHTMLActualizado();
-    // Convertir a base64 de forma robusta
-    var b64 = '';
-    try {
-      b64 = btoa(unescape(encodeURIComponent(htmlContent)));
-    } catch(e) {
-      // fallback para contenido muy largo
-      var bytes = new TextEncoder().encode(htmlContent);
-      var bin = '';
-      bytes.forEach(function(b){ bin += String.fromCharCode(b); });
-      b64 = btoa(bin);
+    // Convertir a base64 usando TextEncoder (más robusto para contenido grande)
+    var encoder = new TextEncoder();
+    var bytes = encoder.encode(htmlContent);
+    var binary = '';
+    var chunkSize = 8192;
+    for (var i = 0; i < bytes.length; i += chunkSize) {
+      var chunk = bytes.subarray(i, i + chunkSize);
+      binary += String.fromCharCode.apply(null, chunk);
     }
+    var b64 = btoa(binary);
     var body = { message: 'Actualizaci\u00f3n malla ' + new Date().toLocaleString('es-CL'), content: b64, branch: GH_BRANCH };
     if (sha) body.sha = sha;
 
