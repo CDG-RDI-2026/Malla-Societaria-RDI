@@ -55,7 +55,7 @@
   .in-border { border-left: 3px solid #4A8C0A !important; }
   .re { background: #2A2060; } .re-sub { background: #1E1748; }
   .re-border { border-left: 3px solid #7B6FCC !important; }
-  .co { background: #4A2500; }
+  .co { background: #C0522A; }
   .nn { background: #2A2A2A; }
   .footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.06); font-size: 10px; color: rgba(0,0,0,0.25); text-align: center; }
 
@@ -176,51 +176,6 @@
   }
   #btn-mostrar-todas:hover { background: #e2e2e2; transform: scale(1.03); }
   #btn-mostrar-todas.expandido { background: #e8f0e8; color: #2E5902; border-color: rgba(46,89,2,0.25); }
-
-  #btn-admin { position:fixed; bottom:20px; right:20px; width:36px; height:36px; border-radius:50%; background:rgba(0,0,0,0.1); border:none; cursor:pointer; font-size:16px; color:rgba(0,0,0,0.3); transition:all 0.2s; z-index:1000; display:flex; align-items:center; justify-content:center; }
-  #btn-admin:hover { background:rgba(0,0,0,0.2); transform:scale(1.1); color:rgba(0,0,0,0.6); }
-  .admin-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center; }
-  .admin-overlay.visible { display:flex; }
-  .admin-modal { background:#fff; border-radius:12px; padding:28px; width:480px; max-width:95vw; max-height:90vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,0.25); position:relative; }
-  .admin-modal h2 { font-size:15px; font-weight:700; color:#1a1a1a; margin-bottom:18px; }
-  .admin-modal .close-btn { position:absolute; top:14px; right:14px; background:none; border:none; font-size:20px; cursor:pointer; color:rgba(0,0,0,0.35); }
-  .admin-modal .close-btn:hover { color:#1a1a1a; }
-  .login-form label { display:block; font-size:10px; font-weight:600; color:#555; margin-bottom:3px; margin-top:12px; text-transform:uppercase; letter-spacing:.05em; }
-  .login-form input { width:100%; padding:8px 11px; border:1px solid rgba(0,0,0,0.18); border-radius:6px; font-size:13px; outline:none; }
-  .login-form input:focus { border-color:#0E3324; }
-  .login-error { color:#e05555; font-size:12px; margin-top:8px; display:none; }
-  .btn-primary { width:100%; margin-top:16px; padding:10px; background:#0E3324; color:#fff; border:none; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
-  .btn-primary:hover { background:#174d36; }
-  .btn-secondary { padding:7px 13px; background:#f0f0f0; color:#444; border:1px solid rgba(0,0,0,0.12); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
-  .btn-secondary:hover { background:#e2e2e2; }
-  .btn-danger { padding:7px 13px; background:#fff0f0; color:#c0392b; border:1px solid rgba(192,57,43,0.25); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
-  .btn-danger:hover { background:#ffe0e0; }
-  .admin-tabs { display:flex; gap:6px; margin-bottom:16px; border-bottom:1px solid rgba(0,0,0,0.08); padding-bottom:10px; }
-  .admin-tab { padding:5px 13px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid transparent; background:none; color:#888; }
-  .admin-tab.active { background:#0E3324; color:#fff; }
-  .admin-tab:hover:not(.active) { background:#f0f0f0; color:#333; }
-  .soc-list { display:flex; flex-direction:column; gap:5px; margin-bottom:12px; }
-  .soc-item { display:flex; align-items:center; justify-content:space-between; padding:7px 11px; border-radius:6px; border:1px solid rgba(0,0,0,0.08); background:#fafafa; font-size:12px; }
-  .soc-name { font-weight:600; color:#1a1a1a; }
-  .soc-meta { font-size:10px; color:#888; margin-top:1px; }
-  .soc-item-actions { display:flex; gap:5px; flex-shrink:0; }
-  .cat-badge { font-size:9px; font-weight:700; padding:2px 7px; border-radius:99px; color:#fff; margin-left:5px; }
-  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
-  .form-grid .full { grid-column:1/-1; }
-  .form-group label { display:block; font-size:10px; font-weight:600; color:#666; margin-bottom:3px; text-transform:uppercase; letter-spacing:.04em; }
-  .form-group input, .form-group select { width:100%; padding:7px 10px; border:1px solid rgba(0,0,0,0.15); border-radius:5px; font-size:12px; outline:none; background:#fff; }
-  .form-group input:focus, .form-group select:focus { border-color:#0E3324; }
-  .form-actions { display:flex; gap:8px; margin-top:14px; justify-content:flex-end; }
-  .export-section { background:#f5f9f5; border:1px solid rgba(14,51,36,0.15); border-radius:8px; padding:16px; text-align:center; }
-  .export-section p { font-size:12px; color:#555; margin-bottom:12px; line-height:1.5; }
-  .btn-export { padding:10px 22px; background:#1a7f37; color:#fff; border:none; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
-  .btn-export:hover { background:#166d30; }
-  .btn-export:disabled { background:#aaa; cursor:not-allowed; }
-  #publish-status { margin-top:12px; font-size:12px; display:none; padding:10px 14px; border-radius:6px; }
-  #publish-status.loading { background:#f5f5f5; color:#555; border:1px solid rgba(0,0,0,0.1); }
-  #publish-status.success { background:#f0faf0; color:#2E7D32; border:1px solid rgba(46,125,50,0.2); }
-  #publish-status.error   { background:#fff0f0; color:#c0392b; border:1px solid rgba(192,57,43,0.2); }
-
 </style>
 </head>
 <body>
@@ -244,7 +199,7 @@
   <div class="ley-item" onclick="irCategoria('col-comercial', 'sub-cat-comercial')" title="Ir a Comercial"><div class="ley-dot" style="background:#2979C8"></div> Comercial</div>
   <div class="ley-item" onclick="irCategoria('col-industrial', 'sub-cat-industrial')" title="Ir a Industrial"><div class="ley-dot" style="background:#4A8C0A"></div> Industrial</div>
   <div class="ley-item" onclick="irCategoria('col-residencial', 'sub-cat-residencial')" title="Ir a Residencial"><div class="ley-dot" style="background:#7B6FCC"></div> Residencial</div>
-  <div class="ley-item" onclick="irCategoria('col-colegios', 'sub-cat-colegios')" title="Ir a Colegios"><div class="ley-dot" style="background:#7B3F00"></div> Colegios</div>
+  <div class="ley-item" onclick="irCategoria('col-colegios', 'sub-cat-colegios')" title="Ir a Colegios"><div class="ley-dot" style="background:#C0522A"></div> Colegios</div>
   <div class="ley-item" onclick="irCategoria('col-nn', 'sub-cat-nn')" title="Ir a NN"><div class="ley-dot" style="background:#555"></div> NN</div>
   <div class="ley-item"><div class="ley-dot" style="background:#3D2700;border:1px solid #A06020;opacity:0.7"></div> Sub-sociedad</div>
   <button id="btn-mostrar-todas" onclick="toggleTodas()">&#9660; Ver todo</button>
@@ -396,7 +351,7 @@ function draw() {
     { id:'col-comercial',   color:'#2979C8' },
     { id:'col-industrial',  color:'#4A8C0A' },
     { id:'col-residencial', color:'#7B6FCC' },
-    { id:'col-colegios',    color:'#C05A00' },
+    { id:'col-colegios',    color:'#C0522A' },
     { id:'col-nn',          color:'#888888' }
   ];
 
@@ -473,7 +428,7 @@ function colapsar(wrapId, pillSelector) {
     wrap.getBoundingClientRect();
     wrap.classList.add('collapsed');
     var btn = document.querySelector(pillSelector + ' .cat-toggle');
-    if (btn) btn.style.transform = 'rotate(0deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
   }
 }
 
@@ -483,7 +438,7 @@ function expandir(wrapId, pillSelector) {
   if (wrap.classList.contains('collapsed')) {
     wrap.classList.remove('collapsed');
     var btn = document.querySelector(pillSelector + ' .cat-toggle');
-    if (btn) btn.style.transform = 'rotate(45deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; }
   }
 }
 
@@ -493,7 +448,7 @@ function expandirSub(subId, parentSelector) {
   if (sub.classList.contains('collapsed')) {
     sub.classList.remove('collapsed');
     var btn = document.querySelector(parentSelector + ' .toggle-btn');
-    if (btn) btn.style.transform = 'rotate(45deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; }
   }
 }
 
@@ -505,7 +460,7 @@ function colapsarSub(subId, parentSelector) {
     sub.getBoundingClientRect();
     sub.classList.add('collapsed');
     var btn = document.querySelector(parentSelector + ' .toggle-btn');
-    if (btn) btn.style.transform = 'rotate(0deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
   }
 }
 
@@ -619,12 +574,12 @@ function toggleCat(wrapId, pillEl) {
   var isCollapsed = wrap.classList.contains('collapsed');
   if (isCollapsed) {
     wrap.classList.remove('collapsed');
-    if (btn) btn.style.transform = 'rotate(45deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; }
   } else {
     wrap.style.maxHeight = wrap.scrollHeight + 'px';
     wrap.getBoundingClientRect();
     wrap.classList.add('collapsed');
-    if (btn) btn.style.transform = 'rotate(0deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
   }
   setTimeout(draw, 370);
 }
@@ -637,83 +592,72 @@ function toggleSub(subId, parentNode) {
   var isCollapsed = sub.classList.contains('collapsed');
 
   if (isCollapsed) {
-    // Expandir
     sub.classList.remove('collapsed');
-    if (btn) {
-      btn.style.transform = 'rotate(45deg)';
-      btn.title = 'Colapsar';
-    }
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; btn.title = 'Colapsar'; }
   } else {
-    // Colapsar — primero fijar max-height al alto actual para que la transición funcione
     sub.style.maxHeight = sub.scrollHeight + 'px';
-    // forzar reflow
     sub.getBoundingClientRect();
     sub.classList.add('collapsed');
-    if (btn) {
-      btn.style.transform = 'rotate(0deg)';
-      btn.title = 'Expandir';
-    }
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; btn.title = 'Expandir'; }
   }
-
-  // Redibujar líneas SVG después de la transición
   setTimeout(draw, 320);
 }
 
 
 window.addEventListener('resize', draw);
 
-// ============================================================
-// PANEL DE ADMINISTRACIÓN
-// ============================================================
-
-var USUARIO = 'afacuna';
-var CLAVE   = 'alan7898';
+// ===== ADMIN PANEL =====
+var ADMIN_USER  = 'afacuna';
+var ADMIN_PASS  = 'alan7898';
+var GH_TOKEN    = '';
+var GH_USER     = 'CDG-RDI-2026';
+var GH_REPO     = 'Malla-Societaria-RDI';
+var GH_FILE     = 'Malla_RDI_Societaria_Act.html';
+var GH_BRANCH   = 'main';
 var autenticado = false;
-var GH_TOKEN  = '';
-var GH_USER   = 'CDG-RDI-2026';
-var GH_REPO   = 'Malla-Societaria-RDI';
-var GH_FILE   = 'Malla_Societaria_v.F.html';
-var GH_BRANCH = 'main';
+var idxEliminar = -1;
+
+var CAT_COLORES = {tierra:'#7B4F00',comercial:'#1565C0',industrial:'#2E5902',residencial:'#4A3B8C',colegios:'#C0522A',nn:'#4A4A4A'};
+var CAT_LABELS  = {tierra:'Tierra',comercial:'Comercial',industrial:'Industrial',residencial:'Residencial',colegios:'Colegios',nn:'NN'};
 
 var SOCIEDADES = [
-  { nombre: "Inmobiliaria Laguna del Sol SpA", codigo: "1272", rut: "76.499.908-8", pct: "100%", cat: "tierra", alerta: "" },
-  { nombre: "El Pe\u00f1\u00f3n SpA", codigo: "1247", rut: "76.349.965-0", pct: "100%", cat: "tierra", alerta: "" },
-  { nombre: "El Pe\u00f1\u00f3n S.A.", codigo: "1120", rut: "96.852.020-2", pct: "99,9995% / 0,0005% Salfa Gesti\u00f3n", cat: "tierra", alerta: "" },
-  { nombre: "Inm. e Inv. Rentas Antofagasta SpA", codigo: "1266", rut: "76.458.119-9", pct: "50% / 50% Soc. Av\u00edcola Pollos Tuculas", cat: "tierra", alerta: "" },
-  { nombre: "Inmobiliaria Alto Volcanes SpA", codigo: "1305", rut: "76.934.005-k", pct: "50% / 50% Inv. y Asesor\u00edas HyC S.A.", cat: "tierra", alerta: "" },
-  { nombre: "Inmobiliaria Borde Blanco SpA", codigo: "1310", rut: "77.009.559-k", pct: "50% / 50% Inm. e Inv. Boston SpA", cat: "tierra", alerta: "" },
-  { nombre: "Nueva Inmobiliaria La Portada SpA", codigo: "1255", rut: "76.414.376-0", pct: "50% / 50% Soc. Av\u00edcola Pollos Kutuls", cat: "tierra", alerta: "" },
-  { nombre: "Soc. Inm. e Inv. Rentas Quilin SpA", codigo: "1271", rut: "76.509.835-1", pct: "50% / 50% Desarrollos Comerciales Quilin S.A.", cat: "comercial", alerta: "" },
-  { nombre: "Inmobiliaria Rentas Vizcachas SpA", codigo: "1304", rut: "76.923.701-1", pct: "50% / 50% Escafe Dos SpA", cat: "comercial", alerta: "" },
-  { nombre: "Rentas Costa Laguna SpA", codigo: "1373", rut: "78.210.408-K", pct: "100%", cat: "comercial", alerta: "" },
-  { nombre: "Rentas Eyzaguirre SpA", codigo: "1374", rut: "78.192.084-3", pct: "100%", cat: "comercial", alerta: "" },
-  { nombre: "Inm. Vivo Santiago SpA", codigo: "1370", rut: "77.073.978-0", pct: "20% / 40% Immob. Puente / 40% C\u00eda. de Seguros Confuturo", cat: "comercial", alerta: "" },
-  { nombre: "Rentas Lo Marcoleta SpA", codigo: "1348", rut: "76.460.349-2", pct: "50% / 50% Inm. Todos Los Santos S.A.", cat: "comercial", alerta: "" },
-  { nombre: "Rentas Brisas Norte SpA", codigo: "1349", rut: "77.460.341-7", pct: "50% / 50% Inm. Todos Los Santos S.A.", cat: "comercial", alerta: "" },
-  { nombre: "Inm. e Inv. Rentas Chicureo SpA", codigo: "", rut: "76.153.005-4", pct: "50% / 50% Desarrollos Comerciales Chicureo S.A.", cat: "comercial", alerta: "cerrar" },
-  { nombre: "Rentas Industriales Stgo / Novofarma", codigo: "1365", rut: "77.878.834-9", pct: "50% / 50% Frontal Trust Desarrollos Industriales I FI", cat: "industrial", alerta: "" },
-  { nombre: "Rentas El Noviciado / Proyecto Easy", codigo: "1356", rut: "77.454.601-4", pct: "50% / 50% Frontal Trust Desarrollos Industriales I FI", cat: "industrial", alerta: "" },
-  { nombre: "Fondo de Inv. Privado Aconcagua-Confuturo II", codigo: "1350", rut: "77.447.468-4", pct: "50% / 50% C\u00eda. de Seguros Confuturo S.A.", cat: "industrial", alerta: "" },
-  { nombre: "Inversiones Industriales SpA", codigo: "1375", rut: "78.226.089-8", pct: "50% / 50% Invers. Log\u00edsticas SpA", cat: "industrial", alerta: "" },
-  { nombre: "Rentas Maip\u00fa SpA", codigo: "", rut: "", pct: "50% / 50% Socio por definir", cat: "industrial", alerta: "rut" },
-  { nombre: "Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI", codigo: "1376", rut: "", pct: "35% / 65% Ameris y otros", cat: "residencial", alerta: "" },
-  { nombre: "Inmobiliaria Padre Hurtado SpA", codigo: "1306", rut: "76.960.346-8", pct: "50% / 50% Inm. e Inv. Boston SpA", cat: "colegios", alerta: "" },
-  { nombre: "Inmobiliaria Tierra del Sol S.A.", codigo: "", rut: "96.796.170-1", pct: "99% / 1% Inmobiliaria Aconcagua S.A.", cat: "nn", alerta: "" },
-  { nombre: "Inmobiliaria Obispo Salas SpA", codigo: "", rut: "76.168.212-1", pct: "50% / 50% Inversiones y Asesor\u00edas H y C S.A.", cat: "nn", alerta: "" },
-  { nombre: "Administradora de Fondos de Inv. San Rafael S.A.", codigo: "", rut: "76.153.005-4", pct: "99,9% / 0,1% Inmobiliaria Aconcagua S.A.", cat: "nn", alerta: "" }
+  {nombre:"Inmobiliaria Laguna del Sol SpA",codigo:"1272",rut:"76.499.908-8",pct:"100%",cat:"tierra",alerta:""},
+  {nombre:"El Pe\u00f1\u00f3n SpA",codigo:"1247",rut:"76.349.965-0",pct:"100%",cat:"tierra",alerta:""},
+  {nombre:"El Pe\u00f1\u00f3n S.A.",codigo:"1120",rut:"96.852.020-2",pct:"99,9995% / 0,0005% Salfa Gesti\u00f3n",cat:"tierra",alerta:""},
+  {nombre:"Inm. e Inv. Rentas Antofagasta SpA",codigo:"1266",rut:"76.458.119-9",pct:"50% / 50% Soc. Av\u00edcola Pollos Tuculas",cat:"tierra",alerta:""},
+  {nombre:"Inmobiliaria Alto Volcanes SpA",codigo:"1305",rut:"76.934.005-k",pct:"50% / 50% Inv. y Asesor\u00edas HyC S.A.",cat:"tierra",alerta:""},
+  {nombre:"Inmobiliaria Borde Blanco SpA",codigo:"1310",rut:"77.009.559-k",pct:"50% / 50% Inm. e Inv. Boston SpA",cat:"tierra",alerta:""},
+  {nombre:"Nueva Inmobiliaria La Portada SpA",codigo:"1255",rut:"76.414.376-0",pct:"50% / 50% Soc. Av\u00edcola Pollos Kutuls",cat:"tierra",alerta:""},
+  {nombre:"Soc. Inm. e Inv. Rentas Quilin SpA",codigo:"1271",rut:"76.509.835-1",pct:"50% / 50% Desarrollos Comerciales Quilin S.A.",cat:"comercial",alerta:""},
+  {nombre:"Inmobiliaria Rentas Vizcachas SpA",codigo:"1304",rut:"76.923.701-1",pct:"50% / 50% Escafe Dos SpA",cat:"comercial",alerta:""},
+  {nombre:"Rentas Costa Laguna SpA",codigo:"1373",rut:"78.210.408-K",pct:"100%",cat:"comercial",alerta:""},
+  {nombre:"Rentas Eyzaguirre SpA",codigo:"1374",rut:"78.192.084-3",pct:"100%",cat:"comercial",alerta:""},
+  {nombre:"Inm. Vivo Santiago SpA",codigo:"1370",rut:"77.073.978-0",pct:"20% / 40% Immob. Puente / 40% C\u00eda. de Seguros Confuturo",cat:"comercial",alerta:""},
+  {nombre:"Rentas Lo Marcoleta SpA",codigo:"1348",rut:"76.460.349-2",pct:"50% / 50% Inm. Todos Los Santos S.A.",cat:"comercial",alerta:""},
+  {nombre:"Rentas Brisas Norte SpA",codigo:"1349",rut:"77.460.341-7",pct:"50% / 50% Inm. Todos Los Santos S.A.",cat:"comercial",alerta:""},
+  {nombre:"Inm. e Inv. Rentas Chicureo SpA",codigo:"",rut:"76.153.005-4",pct:"50% / 50% Desarrollos Comerciales Chicureo S.A.",cat:"comercial",alerta:"cerrar"},
+  {nombre:"Rentas Industriales Stgo / Novofarma",codigo:"1365",rut:"77.878.834-9",pct:"50% / 50% Frontal Trust Desarrollos Industriales I FI",cat:"industrial",alerta:""},
+  {nombre:"Rentas El Noviciado / Proyecto Easy",codigo:"1356",rut:"77.454.601-4",pct:"50% / 50% Frontal Trust Desarrollos Industriales I FI",cat:"industrial",alerta:""},
+  {nombre:"Fondo de Inv. Privado Aconcagua-Confuturo II",codigo:"1350",rut:"77.447.468-4",pct:"50% / 50% C\u00eda. de Seguros Confuturo S.A.",cat:"industrial",alerta:""},
+  {nombre:"Inversiones Industriales SpA",codigo:"1375",rut:"78.226.089-8",pct:"50% / 50% Invers. Log\u00edsticas SpA",cat:"industrial",alerta:""},
+  {nombre:"Rentas Maip\u00fa SpA",codigo:"",rut:"",pct:"50% / 50% Socio por definir",cat:"industrial",alerta:"rut"},
+  {nombre:"Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI",codigo:"1376",rut:"",pct:"35% / 65% Ameris y otros",cat:"residencial",alerta:""},
+  {nombre:"Inmobiliaria Padre Hurtado SpA",codigo:"1306",rut:"76.960.346-8",pct:"50% / 50% Inm. e Inv. Boston SpA",cat:"colegios",alerta:""},
+  {nombre:"Inmobiliaria Tierra del Sol S.A.",codigo:"",rut:"96.796.170-1",pct:"99% / 1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""},
+  {nombre:"Inmobiliaria Obispo Salas SpA",codigo:"",rut:"76.168.212-1",pct:"50% / 50% Inversiones y Asesor\u00edas H y C S.A.",cat:"nn",alerta:""},
+  {nombre:"Administradora de Fondos de Inv. San Rafael S.A.",codigo:"",rut:"76.153.005-4",pct:"99,9% / 0,1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""}
 ];
 
-var CAT_COLORES = { tierra:'#7B4F00', comercial:'#1565C0', industrial:'#2E5902', residencial:'#4A3B8C', colegios:'#7B3F00', nn:'#4A4A4A' };
-var CAT_LABELS  = { tierra:'Tierra', comercial:'Comercial', industrial:'Industrial', residencial:'Residencial', colegios:'Colegios', nn:'NN' };
+function show(id) { document.getElementById(id).style.display = 'flex'; }
+function hide(id) { document.getElementById(id).style.display = 'none'; }
 
-// LOGIN
 function abrirAdmin() {
   if (autenticado) { abrirPanel(); return; }
-  document.getElementById('overlay-login').classList.add('visible');
   document.getElementById('login-user').value = '';
   document.getElementById('login-pass').value = '';
   document.getElementById('login-token').value = '';
   document.getElementById('login-error').style.display = 'none';
+  show('overlay-login');
   setTimeout(function(){ document.getElementById('login-user').focus(); }, 100);
 }
 
@@ -721,42 +665,33 @@ function intentarLogin() {
   var u = document.getElementById('login-user').value.trim();
   var p = document.getElementById('login-pass').value;
   var t = document.getElementById('login-token').value.trim();
-  if (u === USUARIO && p === CLAVE) {
+  if (u === ADMIN_USER && p === ADMIN_PASS) {
     autenticado = true;
     GH_TOKEN = t;
-    document.getElementById('overlay-login').classList.remove('visible');
+    hide('overlay-login');
     abrirPanel();
   } else {
     document.getElementById('login-error').style.display = 'block';
   }
 }
 
-function cerrarAdmin() { document.getElementById('overlay-login').classList.remove('visible'); }
-function cerrarPanel() { document.getElementById('overlay-panel').classList.remove('visible'); }
-
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter' && document.getElementById('overlay-login').classList.contains('visible')) intentarLogin();
-  if (e.key === 'Escape') { cerrarAdmin(); cerrarPanel(); document.getElementById('overlay-confirmar').classList.remove('visible'); }
-});
-
-// PANEL
 function abrirPanel() {
   renderLista();
-  document.getElementById('overlay-panel').classList.add('visible');
-  showTab('tab-lista', document.querySelector('.admin-tab'));
+  show('overlay-panel');
+  showATab('lista');
 }
 
-function showTab(tabId, btn) {
-  ['tab-lista','tab-nueva','tab-exportar'].forEach(function(id) {
-    document.getElementById(id).style.display = 'none';
+function showATab(tab) {
+  ['lista','nueva','pub'].forEach(function(t) {
+    document.getElementById('apanel-' + t).style.display = 'none';
+    var btn = document.getElementById('atab-' + t);
+    if (btn) { btn.style.background = 'none'; btn.style.color = '#888'; btn.style.border = '1px solid transparent'; }
   });
-  document.querySelectorAll('.admin-tab').forEach(function(b) { b.classList.remove('active'); });
-  document.getElementById(tabId).style.display = 'block';
-  if (btn) btn.classList.add('active');
-  if (tabId === 'tab-nueva' && document.getElementById('edit-index').value === '-1') limpiarForm();
+  document.getElementById('apanel-' + tab).style.display = 'block';
+  var activeBtn = document.getElementById('atab-' + tab);
+  if (activeBtn) { activeBtn.style.background = '#0E3324'; activeBtn.style.color = '#fff'; activeBtn.style.border = 'none'; }
 }
 
-// LISTA
 function renderLista() {
   var lista = document.getElementById('soc-list');
   if (!SOCIEDADES.length) {
@@ -765,39 +700,38 @@ function renderLista() {
   }
   lista.innerHTML = SOCIEDADES.map(function(s, i) {
     var alerta = s.alerta === 'rut' ? ' \u26a0\ufe0f' : s.alerta === 'cerrar' ? ' \ud83d\udeab' : '';
-    return '<div class="soc-item">' +
+    return '<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;">' +
       '<div>' +
-        '<div class="soc-name">' + s.nombre + alerta +
-          '<span class="cat-badge" style="background:' + CAT_COLORES[s.cat] + '">' + CAT_LABELS[s.cat] + '</span>' +
+        '<div style="font-weight:600;color:#1a1a1a;">' + s.nombre + alerta +
+          '<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:' + CAT_COLORES[s.cat] + '">' + CAT_LABELS[s.cat] + '</span>' +
         '</div>' +
-        '<div class="soc-meta">' + (s.codigo ? '[' + s.codigo + '] &middot; ' : '') + (s.rut || 'Sin RUT') + '</div>' +
+        '<div style="font-size:10px;color:#888;margin-top:1px;">' + (s.codigo ? '[' + s.codigo + '] &middot; ' : '') + (s.rut || 'Sin RUT') + '</div>' +
       '</div>' +
-      '<div class="soc-item-actions">' +
-        '<button class="btn-secondary" onclick="editarSociedad(' + i + ')">Editar</button>' +
-        '<button class="btn-danger" onclick="confirmarEliminar(' + i + ')">Eliminar</button>' +
+      '<div style="display:flex;gap:5px;flex-shrink:0;">' +
+        '<button onclick="editarSoc(' + i + ')" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button>' +
+        '<button onclick="pedirEliminar(' + i + ')" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button>' +
       '</div>' +
     '</div>';
   }).join('');
 }
 
-// FORM
 function limpiarForm() {
-  document.getElementById('edit-index').value = '-1';
-  ['f-nombre','f-codigo','f-rut','f-pct'].forEach(function(id){ document.getElementById(id).value = ''; });
+  document.getElementById('edit-idx').value = '-1';
+  ['f-nombre','f-codigo','f-rut','f-pct'].forEach(function(id){ document.getElementById(id).value=''; });
   document.getElementById('f-cat').value = 'tierra';
   document.getElementById('f-alerta').value = '';
 }
 
-function editarSociedad(i) {
+function editarSoc(i) {
   var s = SOCIEDADES[i];
-  document.getElementById('edit-index').value = i;
+  document.getElementById('edit-idx').value = i;
   document.getElementById('f-nombre').value = s.nombre;
   document.getElementById('f-codigo').value = s.codigo || '';
   document.getElementById('f-rut').value    = s.rut    || '';
   document.getElementById('f-pct').value    = s.pct    || '';
   document.getElementById('f-cat').value    = s.cat;
   document.getElementById('f-alerta').value = s.alerta || '';
-  showTab('tab-nueva', document.querySelectorAll('.admin-tab')[1]);
+  showATab('nueva');
 }
 
 function guardarSociedad() {
@@ -811,252 +745,217 @@ function guardarSociedad() {
     cat:    document.getElementById('f-cat').value,
     alerta: document.getElementById('f-alerta').value
   };
-  var idx = parseInt(document.getElementById('edit-index').value);
+  var idx = parseInt(document.getElementById('edit-idx').value);
   if (idx >= 0) { SOCIEDADES[idx] = soc; } else { SOCIEDADES.push(soc); }
   limpiarForm();
   renderLista();
-  showTab('tab-lista', document.querySelector('.admin-tab'));
+  showATab('lista');
 }
 
-// ELIMINAR
-var idxEliminar = -1;
-function confirmarEliminar(i) {
+function pedirEliminar(i) {
   idxEliminar = i;
-  document.getElementById('overlay-confirmar').classList.add('visible');
-  document.getElementById('btn-confirmar-eliminar').onclick = function() {
+  show('overlay-confirm');
+  document.getElementById('btn-confirm-del').onclick = function() {
     SOCIEDADES.splice(idxEliminar, 1);
-    document.getElementById('overlay-confirmar').classList.remove('visible');
+    hide('overlay-confirm');
     renderLista();
   };
 }
 
-// GENERAR HTML ACTUALIZADO
-function generarHTMLActualizado() {
-  var cats = ['tierra','comercial','industrial','residencial','colegios','nn'];
-  var catNodos = {};
-  cats.forEach(function(c) { catNodos[c] = []; });
-  SOCIEDADES.forEach(function(s) { if (catNodos[s.cat] !== undefined) catNodos[s.cat].push(s); });
-
-  function nodoHTML(s) {
-    var cls = 'cn ' + s.cat.substring(0,2) + (s.alerta === 'cerrar' ? ' cn-cerrar' : '');
-    var idA = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
-    var alA = s.alerta === 'rut'    ? '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>' :
-              s.alerta === 'cerrar' ? '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>' : '';
-    return '<div class="' + cls + '"' + idA + '>' +
-      '<div class="nm">' + s.nombre + '</div>' +
-      (s.codigo ? '<div class="cod">[' + s.codigo + ']</div>' : '') +
-      (s.rut    ? '<div class="rut">' + s.rut + '</div>'    : '') +
-      (s.pct    ? '<div class="pct">' + s.pct + '</div>'    : '') +
-      alA + '</div>';
-  }
-
-  // Trabajar directamente con el string HTML
-  var baseHTML = document.documentElement.outerHTML;
-
-  // 1. Actualizar SOCIEDADES en el string
-  var socMarca = 'var SOCIEDADES = [';
-  var socFin   = '\n];';
-  var si = baseHTML.indexOf(socMarca);
-  if (si !== -1) {
-    var ei = baseHTML.indexOf(socFin, si) + socFin.length;
-    baseHTML = baseHTML.substring(0, si) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + baseHTML.substring(ei);
-  }
-
-  // 2. Actualizar nodos de cada categoría en el string
-  cats.forEach(function(cat) {
-    var abreMarca = 'id="col-' + cat + '"';
-    var idxCol = baseHTML.indexOf(abreMarca);
-    if (idxCol === -1) return;
-
-    var abreNodes = '<div class="cat-nodes">';
-    var idxNodes = baseHTML.indexOf(abreNodes, idxCol);
-    if (idxNodes === -1) return;
-    idxNodes += abreNodes.length;
-
-    // Encontrar el cierre del cat-nodes contando divs
-    var depth = 1;
-    var pos = idxNodes;
-    while (pos < baseHTML.length && depth > 0) {
-      var nextOpen  = baseHTML.indexOf('<div', pos);
-      var nextClose = baseHTML.indexOf('</div>', pos);
-      if (nextClose === -1) break;
-      if (nextOpen !== -1 && nextOpen < nextClose) {
-        depth++;
-        pos = nextOpen + 4;
-      } else {
-        depth--;
-        if (depth === 0) {
-          // Reemplazar contenido
-          var nuevosNodos = catNodos[cat].map(nodoHTML).join('\n');
-          baseHTML = baseHTML.substring(0, idxNodes) + nuevosNodos + baseHTML.substring(nextClose);
-          break;
-        }
-        pos = nextClose + 6;
-      }
-    }
-  });
-
-  return '<!DOCTYPE html>\n' + baseHTML;
-}
-
-
-
-// PUBLICAR EN GITHUB
 async function publicarGitHub() {
-  var btn    = document.getElementById('btn-publicar');
-  var status = document.getElementById('publish-status');
+  if (!GH_TOKEN) { alert('Token de GitHub no ingresado. Por favor cierra sesión y vuelve a ingresar con el token.'); return; }
+  var btn = document.getElementById('btn-pub');
+  var status = document.getElementById('pub-status');
   btn.disabled = true;
   btn.textContent = 'Publicando...';
   status.style.display = 'block';
-  status.className = 'loading';
+  status.style.background = '#f5f5f5';
+  status.style.color = '#555';
+  status.style.border = '1px solid rgba(0,0,0,0.1)';
   status.textContent = 'Conectando con GitHub...';
 
   try {
     var apiURL = 'https://api.github.com/repos/' + GH_USER + '/' + GH_REPO + '/contents/' + GH_FILE;
-    var headers = {
-      'Authorization': 'token ' + GH_TOKEN,
-      'Accept': 'application/vnd.github.v3+json',
-      'Content-Type': 'application/json'
-    };
+    var hdrs = {'Authorization':'token ' + GH_TOKEN,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'};
 
-    // 1. Obtener archivo actual de GitHub (decodificado)
-    status.textContent = 'Descargando archivo actual de GitHub...';
-    var getRes = await fetch(apiURL, { headers: headers });
-    if (!getRes.ok) throw new Error('No se pudo obtener el archivo: ' + getRes.status);
+    status.textContent = 'Descargando archivo actual...';
+    var getRes = await fetch(apiURL, {headers: hdrs});
+    if (!getRes.ok) throw new Error('Error obteniendo archivo: ' + getRes.status);
     var getJson = await getRes.json();
     var sha = getJson.sha;
 
-    // 2. Decodificar el contenido actual
-    var currentB64 = getJson.content.split('\n').join('');
-    var currentHTML = decodeURIComponent(escape(atob(currentB64)));
+    // Decodificar contenido actual
+    var b64content = getJson.content;
+    // Remover saltos de línea del base64
+    var cleanB64 = '';
+    for (var ci = 0; ci < b64content.length; ci++) {
+      if (b64content[ci] !== '\n' && b64content[ci] !== '\r') cleanB64 += b64content[ci];
+    }
+    var currentHTML = decodeURIComponent(escape(atob(cleanB64)));
 
-    // 3. Reemplazar solo el array SOCIEDADES en el string
+    // Reemplazar SOCIEDADES en el string
     status.textContent = 'Actualizando datos...';
     var marca = 'var SOCIEDADES = [';
-    var fin   = '
-];';
+    var marcaFin = '\n];';
     var si = currentHTML.indexOf(marca);
-    if (si === -1) throw new Error('No se encontró el marcador SOCIEDADES en el archivo.');
-    var ei = currentHTML.indexOf(fin, si) + fin.length;
+    if (si === -1) throw new Error('Marcador SOCIEDADES no encontrado.');
+    var ei = currentHTML.indexOf(marcaFin, si) + marcaFin.length;
     var nuevoHTML = currentHTML.substring(0, si) +
                    'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' +
                    currentHTML.substring(ei);
 
-    // 4. Subir el archivo actualizado
+    // Encodar a base64
     status.textContent = 'Subiendo a GitHub...';
-    var encoder = new TextEncoder();
-    var bytes = encoder.encode(nuevoHTML);
-    var binary = '';
-    var chunk = 8192;
-    for (var i = 0; i < bytes.length; i += chunk) {
-      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    var enc = new TextEncoder();
+    var bytes = enc.encode(nuevoHTML);
+    var bin = '';
+    for (var bi = 0; bi < bytes.length; bi += 8192) {
+      bin += String.fromCharCode.apply(null, bytes.subarray(bi, bi + 8192));
     }
-    var newB64 = btoa(binary);
+    var newB64 = btoa(bin);
 
-    var body = {
-      message: 'Actualización malla ' + new Date().toLocaleString('es-CL'),
-      content: newB64,
-      sha: sha,
-      branch: GH_BRANCH
-    };
+    var putRes = await fetch(apiURL, {
+      method: 'PUT', headers: hdrs,
+      body: JSON.stringify({message: 'Actualización malla ' + new Date().toLocaleString('es-CL'), content: newB64, sha: sha, branch: GH_BRANCH})
+    });
+    if (!putRes.ok) { var ej = await putRes.json(); throw new Error(ej.message || 'Error ' + putRes.status); }
 
-    var putRes = await fetch(apiURL, { method: 'PUT', headers: headers, body: JSON.stringify(body) });
-    if (!putRes.ok) {
-      var ej = await putRes.json();
-      throw new Error(ej.message || 'Error ' + putRes.status);
-    }
-
-    status.className = 'success';
-    status.innerHTML = '✅ <strong>¡Publicado con éxito!</strong> El reporte se actualizará en unos segundos.<br>' +
-      '<a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_Societaria_Act.html" ' +
-      'target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte →</a>';
+    status.style.background = '#f0faf0';
+    status.style.color = '#2E7D32';
+    status.style.border = '1px solid rgba(46,125,50,0.2)';
+    status.innerHTML = '\u2705 <strong>\u00a1Publicado con \u00e9xito!</strong> El reporte se actualizar\u00e1 en unos segundos.<br>' +
+      '<a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_Societaria_Act.html" target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte \u2192</a>';
 
   } catch(e) {
-    status.className = 'error';
-    status.innerHTML = '❌ <strong>Error:</strong> ' + e.message;
-    console.error('Error publicando:', e);
+    status.style.background = '#fff0f0';
+    status.style.color = '#c0392b';
+    status.style.border = '1px solid rgba(192,57,43,0.2)';
+    status.innerHTML = '\u274c <strong>Error:</strong> ' + e.message;
+    console.error(e);
   }
-
   btn.disabled = false;
-  btn.textContent = '⛅ Publicar en GitHub';
+  btn.textContent = '\u26c5 Publicar en GitHub';
 }
 
-
-// DESCARGAR HTML
 function exportarHTML() {
-  var htmlContent = generarHTMLActualizado();
-  var blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+  var htmlContent = document.documentElement.outerHTML;
+  var marca = 'var SOCIEDADES = [';
+  var marcaFin = '\n];';
+  var si = htmlContent.indexOf(marca);
+  if (si !== -1) {
+    var ei = htmlContent.indexOf(marcaFin, si) + marcaFin.length;
+    htmlContent = htmlContent.substring(0, si) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + htmlContent.substring(ei);
+  }
+  var blob = new Blob(['<!DOCTYPE html>\n' + htmlContent], {type:'text/html;charset=utf-8'});
   var a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'Malla_Societaria_v.F.html';
+  a.download = GH_FILE;
   a.click();
 }
 
-</script>
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    hide('overlay-login'); hide('overlay-panel'); hide('overlay-confirm');
+  }
+  if (e.key === 'Enter' && document.getElementById('overlay-login').style.display !== 'none') {
+    intentarLogin();
+  }
+});
 
-<button id="btn-admin" onclick="abrirAdmin()" title="Administraci&#243;n">&#9881;</button>
-<div class="admin-overlay" id="overlay-login">
-  <div class="admin-modal" style="width:400px">
-    <button class="close-btn" onclick="cerrarAdmin()">&#215;</button>
-    <h2>&#128274; Acceso restringido</h2>
-    <div class="login-form">
-      <label>Usuario</label><input type="text" id="login-user" placeholder="Usuario" autocomplete="off">
-      <label>Contrase&#241;a</label><input type="password" id="login-pass" placeholder="Contrase&#241;a">
-      <label>Token GitHub</label><input type="password" id="login-token" placeholder="ghp_...">
-      <div style="font-size:10px;color:#bbb;margin-top:3px">El token no se guarda en el archivo.</div>
-      <div class="login-error" id="login-error">Usuario o contrase&#241;a incorrectos.</div>
-      <button class="btn-primary" onclick="intentarLogin()">Ingresar</button>
+</script>
+<!-- BTN ADMIN -->
+<button id="btn-admin" onclick="abrirAdmin()" title="Administración" style="position:fixed;bottom:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.1);border:none;cursor:pointer;font-size:16px;color:rgba(0,0,0,0.3);z-index:1000;display:flex;align-items:center;justify-content:center;">&#9881;</button>
+
+<!-- LOGIN -->
+<div id="overlay-login" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;padding:28px;width:400px;max-width:95vw;box-shadow:0 20px 60px rgba(0,0,0,0.25);position:relative;">
+    <button onclick="document.getElementById('overlay-login').style.display='none'" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;">&#215;</button>
+    <h2 style="font-size:15px;font-weight:700;margin-bottom:18px;">&#128274; Acceso restringido</h2>
+    <label style="display:block;font-size:10px;font-weight:600;color:#555;margin-bottom:3px;text-transform:uppercase;">Usuario</label>
+    <input type="text" id="login-user" placeholder="Usuario" autocomplete="off" style="width:100%;padding:8px 11px;border:1px solid rgba(0,0,0,0.18);border-radius:6px;font-size:13px;outline:none;margin-bottom:10px;">
+    <label style="display:block;font-size:10px;font-weight:600;color:#555;margin-bottom:3px;text-transform:uppercase;">Contraseña</label>
+    <input type="password" id="login-pass" placeholder="Contraseña" style="width:100%;padding:8px 11px;border:1px solid rgba(0,0,0,0.18);border-radius:6px;font-size:13px;outline:none;margin-bottom:10px;">
+    <label style="display:block;font-size:10px;font-weight:600;color:#555;margin-bottom:3px;text-transform:uppercase;">Token GitHub</label>
+    <input type="password" id="login-token" placeholder="ghp_..." style="width:100%;padding:8px 11px;border:1px solid rgba(0,0,0,0.18);border-radius:6px;font-size:13px;outline:none;margin-bottom:4px;">
+    <div style="font-size:10px;color:#bbb;margin-bottom:10px;">El token no se guarda en el archivo.</div>
+    <div id="login-error" style="color:#e05555;font-size:12px;margin-bottom:8px;display:none;">Usuario o contraseña incorrectos.</div>
+    <button onclick="intentarLogin()" style="width:100%;padding:10px;background:#0E3324;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;">Ingresar</button>
+  </div>
+</div>
+
+<!-- PANEL -->
+<div id="overlay-panel" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;padding:28px;width:600px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.25);position:relative;">
+    <button onclick="document.getElementById('overlay-panel').style.display='none'" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;">&#215;</button>
+    <h2 style="font-size:15px;font-weight:700;margin-bottom:16px;">&#9881; Panel de Administración</h2>
+    <div style="display:flex;gap:6px;margin-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.08);padding-bottom:10px;">
+      <button class="atab" id="atab-lista" onclick="showATab('lista')" style="padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:#0E3324;color:#fff;">Sociedades</button>
+      <button class="atab" id="atab-nueva" onclick="showATab('nueva')" style="padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:#888;">+ Nueva</button>
+      <button class="atab" id="atab-pub" onclick="showATab('pub')" style="padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:#888;">Publicar</button>
+    </div>
+    <div id="apanel-lista"><div id="soc-list"></div></div>
+    <div id="apanel-nueva" style="display:none;">
+      <input type="hidden" id="edit-idx" value="-1">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
+        <div style="grid-column:1/-1;">
+          <label style="display:block;font-size:10px;font-weight:600;color:#666;margin-bottom:3px;text-transform:uppercase;">Nombre</label>
+          <input type="text" id="f-nombre" placeholder="Ej: Inmobiliaria X SpA" style="width:100%;padding:7px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:5px;font-size:12px;outline:none;">
+        </div>
+        <div>
+          <label style="display:block;font-size:10px;font-weight:600;color:#666;margin-bottom:3px;text-transform:uppercase;">Código</label>
+          <input type="text" id="f-codigo" placeholder="Ej: 1272" style="width:100%;padding:7px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:5px;font-size:12px;outline:none;">
+        </div>
+        <div>
+          <label style="display:block;font-size:10px;font-weight:600;color:#666;margin-bottom:3px;text-transform:uppercase;">RUT</label>
+          <input type="text" id="f-rut" placeholder="Ej: 76.499.908-8" style="width:100%;padding:7px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:5px;font-size:12px;outline:none;">
+        </div>
+        <div style="grid-column:1/-1;">
+          <label style="display:block;font-size:10px;font-weight:600;color:#666;margin-bottom:3px;text-transform:uppercase;">Participación</label>
+          <input type="text" id="f-pct" placeholder="Ej: 100% o 50% / 50% Socio X" style="width:100%;padding:7px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:5px;font-size:12px;outline:none;">
+        </div>
+        <div>
+          <label style="display:block;font-size:10px;font-weight:600;color:#666;margin-bottom:3px;text-transform:uppercase;">Categoría</label>
+          <select id="f-cat" style="width:100%;padding:7px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:5px;font-size:12px;outline:none;background:#fff;">
+            <option value="tierra">Tierra</option><option value="comercial">Comercial</option>
+            <option value="industrial">Industrial</option><option value="residencial">Residencial</option>
+            <option value="colegios">Colegios</option><option value="nn">NN</option>
+          </select>
+        </div>
+        <div>
+          <label style="display:block;font-size:10px;font-weight:600;color:#666;margin-bottom:3px;text-transform:uppercase;">Alerta</label>
+          <select id="f-alerta" style="width:100%;padding:7px 10px;border:1px solid rgba(0,0,0,0.15);border-radius:5px;font-size:12px;outline:none;background:#fff;">
+            <option value="">Ninguna</option>
+            <option value="rut">⚠ RUT pendiente</option>
+            <option value="cerrar">🚫 Cerrar sociedad</option>
+          </select>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:14px;justify-content:flex-end;">
+        <button onclick="limpiarForm()" style="padding:7px 13px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">Cancelar</button>
+        <button onclick="guardarSociedad()" style="padding:7px 16px;background:#0E3324;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">Guardar</button>
+      </div>
+    </div>
+    <div id="apanel-pub" style="display:none;text-align:center;">
+      <div style="background:#f5f9f5;border:1px solid rgba(14,51,36,0.15);border-radius:8px;padding:20px;">
+        <p style="font-size:12px;color:#555;margin-bottom:14px;line-height:1.5;">Publica los cambios directamente en GitHub.<br>El reporte online se actualizará en segundos.</p>
+        <button id="btn-pub" onclick="publicarGitHub()" style="padding:10px 22px;background:#1a7f37;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;">&#9729; Publicar en GitHub</button>
+        <div id="pub-status" style="display:none;margin-top:12px;font-size:12px;padding:10px 14px;border-radius:6px;"></div>
+      </div>
+      <div style="margin-top:12px;">
+        <button onclick="exportarHTML()" style="padding:7px 13px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">&#11015; Descargar HTML</button>
+      </div>
     </div>
   </div>
 </div>
-<div class="admin-overlay" id="overlay-panel">
-  <div class="admin-modal" style="width:600px">
-    <button class="close-btn" onclick="cerrarPanel()">&#215;</button>
-    <h2>&#9881; Panel de Administraci&#243;n</h2>
-    <div class="admin-tabs">
-      <button class="admin-tab active" onclick="showTab('tab-lista',this)">Sociedades</button>
-      <button class="admin-tab" onclick="showTab('tab-nueva',this)">+ Nueva sociedad</button>
-      <button class="admin-tab" onclick="showTab('tab-exportar',this)">Publicar</button>
-    </div>
-    <div id="tab-lista"><div class="soc-list" id="soc-list"></div></div>
-    <div id="tab-nueva" style="display:none">
-      <input type="hidden" id="edit-index" value="-1">
-      <div class="form-grid">
-        <div class="form-group full"><label>Nombre</label><input type="text" id="f-nombre" placeholder="Ej: Inmobiliaria X SpA"></div>
-        <div class="form-group"><label>C&#243;digo</label><input type="text" id="f-codigo" placeholder="Ej: 1272"></div>
-        <div class="form-group"><label>RUT</label><input type="text" id="f-rut" placeholder="Ej: 76.499.908-8"></div>
-        <div class="form-group full"><label>Participaci&#243;n</label><input type="text" id="f-pct" placeholder="Ej: 100% o 50% / 50% Socio X"></div>
-        <div class="form-group"><label>Categor&#237;a</label>
-          <select id="f-cat"><option value="tierra">Tierra</option><option value="comercial">Comercial</option><option value="industrial">Industrial</option><option value="residencial">Residencial</option><option value="colegios">Colegios</option><option value="nn">NN</option></select>
-        </div>
-        <div class="form-group"><label>Alerta</label>
-          <select id="f-alerta"><option value="">Ninguna</option><option value="rut">&#9888; RUT pendiente</option><option value="cerrar">&#128683; Cerrar sociedad</option></select>
-        </div>
-      </div>
-      <div class="form-actions">
-        <button class="btn-secondary" onclick="limpiarForm()">Cancelar</button>
-        <button class="btn-primary" style="width:auto;margin-top:0" onclick="guardarSociedad()">Guardar</button>
-      </div>
-    </div>
-    <div id="tab-exportar" style="display:none">
-      <div class="export-section">
-        <p>Publica los cambios directamente en GitHub. El reporte online se actualizar&#225; en segundos.</p>
-        <button class="btn-export" id="btn-publicar" onclick="publicarGitHub()">&#9729; Publicar en GitHub</button>
-        <div id="publish-status"></div>
-      </div>
-      <div style="margin-top:14px;border-top:1px solid rgba(0,0,0,0.08);padding-top:12px;text-align:center">
-        <button class="btn-secondary" onclick="exportarHTML()">&#11015; Descargar HTML</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="admin-overlay" id="overlay-confirmar">
-  <div class="admin-modal" style="width:340px;text-align:center">
-    <h2>&#9888; Confirmar eliminaci&#243;n</h2>
-    <p style="font-size:13px;color:#555;margin:10px 0 20px">&#191;Eliminar esta sociedad?</p>
-    <div style="display:flex;gap:10px;justify-content:center">
-      <button class="btn-secondary" onclick="document.getElementById('overlay-confirmar').classList.remove('visible')">Cancelar</button>
-      <button class="btn-danger" id="btn-confirmar-eliminar">Eliminar</button>
+
+<!-- CONFIRMAR ELIMINAR -->
+<div id="overlay-confirm" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:3000;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:12px;padding:28px;width:340px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.25);">
+    <h2 style="font-size:15px;font-weight:700;margin-bottom:10px;">⚠ Confirmar eliminación</h2>
+    <p style="font-size:13px;color:#555;margin-bottom:20px;">¿Eliminar esta sociedad?</p>
+    <div style="display:flex;gap:10px;justify-content:center;">
+      <button onclick="document.getElementById('overlay-confirm').style.display='none'" style="padding:7px 13px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">Cancelar</button>
+      <button id="btn-confirm-del" style="padding:7px 13px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">Eliminar</button>
     </div>
   </div>
 </div>
