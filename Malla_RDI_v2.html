@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Malla Societaria — Rentas y Desarrollo Aconcagua</title>
@@ -229,13 +230,13 @@
   <div class="header-left">
     
     <div class="header-titles">
-      <h1>Malla Societaria — Rentas y Desarrollo Aconcagua</h1>
-      <p>SalfaCorp S.A. · Marzo 2026</p>
+      <h1>Malla Societaria &mdash; Rentas y Desarrollo Aconcagua</h1>
+      <p>SalfaCorp S.A. &middot; Marzo 2026</p>
     </div>
   </div>
   <div class="header-right">
-    <span class="badge badge-warn" onclick="irAlerta('nodo-rut', 'col-industrial')" title="Ir a Rentas Maipú SpA" style="cursor:pointer">⚠ 1 RUT pendiente</span>
-    <span class="badge badge-danger" onclick="irAlerta('nodo-cerrar', 'col-comercial')" title="Ir a Inm. Rentas Chicureo SpA" style="cursor:pointer">🚫 1 Cerrar sociedad</span>
+    <span class="badge badge-warn" onclick="irAlerta('nodo-rut', 'col-industrial')" title="Ir a Rentas Maipú SpA" style="cursor:pointer">&#9888; 1 RUT pendiente</span>
+    <span class="badge badge-danger" onclick="irAlerta('nodo-cerrar', 'col-comercial')" title="Ir a Inm. Rentas Chicureo SpA" style="cursor:pointer">&#128683; 1 Cerrar sociedad</span>
   </div>
 </div>
 
@@ -247,11 +248,11 @@
   <div class="ley-item" onclick="irCategoria('col-colegios', 'sub-cat-colegios')" title="Ir a Colegios"><div class="ley-dot" style="background:#7B3F00"></div> Colegios</div>
   <div class="ley-item" onclick="irCategoria('col-nn', 'sub-cat-nn')" title="Ir a NN"><div class="ley-dot" style="background:#555"></div> NN</div>
   <div class="ley-item"><div class="ley-dot" style="background:#3D2700;border:1px solid #A06020;opacity:0.7"></div> Sub-sociedad</div>
-  <button id="btn-mostrar-todas" onclick="toggleTodas()">▼ Ver todo</button>
+  <button id="btn-mostrar-todas" onclick="toggleTodas()">&#9660; Ver todo</button>
 </div>
 
 <div class="scroll-wrap" id="scroll-wrap">
-  <svg id="svg-lines" width="1425" height="387.78125" style="width: 1425px; height: 387.781px;"><line x1="712.5" y1="284.78125" x2="712.5" y2="310.78125" stroke="rgba(0,0,0,0.22)" stroke-width="2" opacity="1"></line><line x1="119.5" y1="310.78125" x2="1307" y2="310.78125" stroke="rgba(0,0,0,0.22)" stroke-width="2" opacity="1"></line><line x1="119.5" y1="310.78125" x2="119.5" y2="336.78125" stroke="#A06020" stroke-width="2" opacity="0.55"></line><circle cx="119.5" cy="310.78125" r="3.5" fill="#A06020" opacity="0.75"></circle><line x1="357" y1="310.78125" x2="357" y2="336.78125" stroke="#2979C8" stroke-width="2" opacity="0.55"></line><circle cx="357" cy="310.78125" r="3.5" fill="#2979C8" opacity="0.75"></circle><line x1="594.5" y1="310.78125" x2="594.5" y2="336.78125" stroke="#4A8C0A" stroke-width="2" opacity="0.55"></line><circle cx="594.5" cy="310.78125" r="3.5" fill="#4A8C0A" opacity="0.75"></circle><line x1="833.5" y1="310.78125" x2="833.5" y2="336.78125" stroke="#7B6FCC" stroke-width="2" opacity="0.55"></line><circle cx="833.5" cy="310.78125" r="3.5" fill="#7B6FCC" opacity="0.75"></circle><line x1="1071" y1="310.78125" x2="1071" y2="336.78125" stroke="#C05A00" stroke-width="2" opacity="0.55"></line><circle cx="1071" cy="310.78125" r="3.5" fill="#C05A00" opacity="0.75"></circle><line x1="1307" y1="310.78125" x2="1307" y2="336.78125" stroke="#888888" stroke-width="2" opacity="0.55"></line><circle cx="1307" cy="310.78125" r="3.5" fill="#888888" opacity="0.75"></circle><circle cx="712.5" cy="310.78125" r="4" fill="rgba(0,0,0,0.28)" opacity="1"></circle></svg>
+  <svg id="svg-lines"></svg>
   <div class="malla" id="malla">
 
     <div class="nd nd-salfacorp">
@@ -263,14 +264,14 @@
       <div class="nm">Inmobiliaria Aconcagua Rentas S.A.</div>
       <div class="cod">[1261]</div>
       <div class="rut">76.528.509-7</div>
-      <div class="pct">99,9% / 0,54% Salfa Gestión S.A.</div>
+      <div class="pct">99,9% / 0,54% Salfa Gesti&#243;n S.A.</div>
     </div>
     <div class="vline"></div>
     <div class="nd nd-holding" id="nd-rda">
       <div class="nm">Rentas y Desarrollo Aconcagua S.A.</div>
       <div class="cod">[1033]</div>
       <div class="rut">96.951.850-3</div>
-      <div class="pct">99,9% / 0,0001% Salfa Gestión / 0,0001% Aconcagua Gestión Inm.</div>
+      <div class="pct">99,9% / 0,0001% Salfa Gesti&#243;n / 0,0001% Aconcagua Gesti&#243;n Inm.</div>
     </div>
 
     <div class="connector-space" id="connector-space"></div>
@@ -278,16 +279,16 @@
     <div class="cats-row" id="cats-row">
 
       <div class="cat-col" id="col-tierra">
-        <div class="cat-pill" style="background:#7B4F00" onclick="toggleCat('sub-cat-tierra', this)" title="Colapsar/expandir Tierra">Tierra <span class="cat-toggle" style="transform: rotate(0deg);">+</span></div>
-        <div class="cat-nodes-wrap collapsed" id="sub-cat-tierra" style="max-height: 821px;"><div class="cat-nodes">
+        <div class="cat-pill" style="background:#7B4F00" onclick="toggleCat('sub-cat-tierra', this)" title="Colapsar/expandir Tierra">Tierra <span class="cat-toggle" style="transform:rotate(45deg)">&#43;</span></div>
+        <div class="cat-nodes-wrap" id="sub-cat-tierra"><div class="cat-nodes">
           <div class="cn t"><div class="nm">Inmobiliaria Laguna del Sol SpA</div><div class="cod">[1272]</div><div class="rut">76.499.908-8</div><div class="pct">100%</div></div>
-          <div class="cn t"><div class="nm">El Peñón SpA</div><div class="cod">[1247]</div><div class="rut">76.349.965-0</div><div class="pct">100%</div></div>
-          <div class="cn t"><div class="nm">El Peñón S.A.</div><div class="cod">[1120]</div><div class="rut">96.852.020-2</div><div class="pct">99,9995% / 0,0005% Salfa Gestión</div></div>
-          <div class="cn t"><div class="nm">Inm. e Inv. Rentas Antofagasta SpA</div><div class="cod">[1266]</div><div class="rut">76.458.119-9</div><div class="pct">50% / 50% Soc. Avícola Pollos Tuculas</div></div>
-          <div class="cn t"><div class="nm">Inmobiliaria Alto Volcanes SpA</div><div class="cod">[1305]</div><div class="rut">76.934.005-k</div><div class="pct">50% / 50% Inv. y Asesorías HyC S.A.</div></div>
+          <div class="cn t"><div class="nm">El Pe&#241;&#243;n SpA</div><div class="cod">[1247]</div><div class="rut">76.349.965-0</div><div class="pct">100%</div></div>
+          <div class="cn t"><div class="nm">El Pe&#241;&#243;n S.A.</div><div class="cod">[1120]</div><div class="rut">96.852.020-2</div><div class="pct">99,9995% / 0,0005% Salfa Gesti&#243;n</div></div>
+          <div class="cn t"><div class="nm">Inm. e Inv. Rentas Antofagasta SpA</div><div class="cod">[1266]</div><div class="rut">76.458.119-9</div><div class="pct">50% / 50% Soc. Av&#237;cola Pollos Tuculas</div></div>
+          <div class="cn t"><div class="nm">Inmobiliaria Alto Volcanes SpA</div><div class="cod">[1305]</div><div class="rut">76.934.005-k</div><div class="pct">50% / 50% Inv. y Asesor&#237;as HyC S.A.</div></div>
           <div class="cn t"><div class="nm">Inmobiliaria Borde Blanco SpA</div><div class="cod">[1310]</div><div class="rut">77.009.559-k</div><div class="pct">50% / 50% Inm. e Inv. Boston SpA</div></div>
           <div>
-            <div class="cn t has-children" onclick="toggleSub('sub-portada', this)"><div class="nm">Nueva Inmobiliaria La Portada SpA <span class="toggle-btn expanded-icon" id="btn-portada">+</span></div><div class="cod">[1255]</div><div class="rut">76.414.376-0</div><div class="pct">50% / 50% Soc. Avícola Pollos Kutuls</div></div>
+            <div class="cn t has-children" onclick="toggleSub('sub-portada', this)"><div class="nm">Nueva Inmobiliaria La Portada SpA <span class="toggle-btn expanded-icon" id="btn-portada">&#43;</span></div><div class="cod">[1255]</div><div class="rut">76.414.376-0</div><div class="pct">50% / 50% Soc. Av&#237;cola Pollos Kutuls</div></div>
             <div class="sub-wrap t-border collapsible" id="sub-portada">
               <div class="cn t t-sub"><div class="nm">Inmobiliaria La Portada SpA</div><div class="cod">[1121]</div><div class="rut">99.516.320-9</div><div class="pct">100%</div></div>
               <div class="cn t t-sub"><div class="nm">Inm. e Inv. Lutecia SpA</div><div class="cod">[1254]</div><div class="rut">76.299.903-k</div><div class="pct">100%</div></div>
@@ -298,71 +299,71 @@
       </div>
 
       <div class="cat-col" id="col-comercial">
-        <div class="cat-pill" style="background:#1565C0" onclick="toggleCat('sub-cat-comercial', this)" title="Colapsar/expandir Comercial">Comercial <span class="cat-toggle" style="transform: rotate(0deg);">+</span></div>
-        <div class="cat-nodes-wrap collapsed" id="sub-cat-comercial" style="max-height: 684px;"><div class="cat-nodes">
+        <div class="cat-pill" style="background:#1565C0" onclick="toggleCat('sub-cat-comercial', this)" title="Colapsar/expandir Comercial">Comercial <span class="cat-toggle" style="transform:rotate(45deg)">&#43;</span></div>
+        <div class="cat-nodes-wrap" id="sub-cat-comercial"><div class="cat-nodes">
           <div class="cn cm"><div class="nm">Soc. Inm. e Inv. Rentas Quilin SpA</div><div class="cod">[1271]</div><div class="rut">76.509.835-1</div><div class="pct">50% / 50% Desarrollos Comerciales Quilin S.A.</div></div>
           <div class="cn cm"><div class="nm">Inmobiliaria Rentas Vizcachas SpA</div><div class="cod">[1304]</div><div class="rut">76.923.701-1</div><div class="pct">50% / 50% Escafe Dos SpA</div></div>
           <div class="cn cm"><div class="nm">Rentas Costa Laguna SpA</div><div class="cod">[1373]</div><div class="rut">78.210.408-K</div><div class="pct">100%</div></div>
           <div class="cn cm"><div class="nm">Rentas Eyzaguirre SpA</div><div class="cod">[1374]</div><div class="rut">78.192.084-3</div><div class="pct">100%</div></div>
-          <div class="cn cm"><div class="nm">Inm. Vivo Santiago SpA</div><div class="cod">[1370]</div><div class="rut">77.073.978-0</div><div class="pct">20% / 40% Immob. Puente / 40% Cía. de Seguros Confuturo</div></div>
+          <div class="cn cm"><div class="nm">Inm. Vivo Santiago SpA</div><div class="cod">[1370]</div><div class="rut">77.073.978-0</div><div class="pct">20% / 40% Immob. Puente / 40% C&#237;a. de Seguros Confuturo</div></div>
           <div class="cn cm"><div class="nm">Rentas Lo Marcoleta SpA</div><div class="cod">[1348]</div><div class="rut">76.460.349-2</div><div class="pct">50% / 50% Inm. Todos Los Santos S.A.</div></div>
           <div class="cn cm"><div class="nm">Rentas Brisas Norte SpA</div><div class="cod">[1349]</div><div class="rut">77.460.341-7</div><div class="pct">50% / 50% Inm. Todos Los Santos S.A.</div></div>
           <div class="cn cm cn-cerrar" id="nodo-cerrar">
             <div class="nm">Inm. e Inv. Rentas Chicureo SpA</div>
             <div class="rut">76.153.005-4</div>
             <div class="pct">50% / 50% Desarrollos Comerciales Chicureo S.A.</div>
-            <div class="alerta-cerrar">🚫 Cerrar Sociedad</div>
+            <div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>
           </div>
         </div></div>
       </div>
 
       <div class="cat-col" id="col-industrial">
-        <div class="cat-pill" style="background:#2E5902" onclick="toggleCat('sub-cat-industrial', this)" title="Colapsar/expandir Industrial">Industrial <span class="cat-toggle" style="transform: rotate(0deg);">+</span></div>
-        <div class="cat-nodes-wrap collapsed" id="sub-cat-industrial" style="max-height: 533px;"><div class="cat-nodes">
+        <div class="cat-pill" style="background:#2E5902" onclick="toggleCat('sub-cat-industrial', this)" title="Colapsar/expandir Industrial">Industrial <span class="cat-toggle" style="transform:rotate(45deg)">&#43;</span></div>
+        <div class="cat-nodes-wrap" id="sub-cat-industrial"><div class="cat-nodes">
           <div class="cn in"><div class="nm">Rentas Industriales Stgo / Novofarma</div><div class="cod">[1365]</div><div class="rut">77.878.834-9</div><div class="pct">50% / 50% Frontal Trust Desarrollos Industriales I FI</div></div>
           <div class="cn in"><div class="nm">Rentas El Noviciado / Proyecto Easy</div><div class="cod">[1356]</div><div class="rut">77.454.601-4</div><div class="pct">50% / 50% Frontal Trust Desarrollos Industriales I FI</div></div>
           <div>
-            <div class="cn in has-children" onclick="toggleSub('sub-confuturo', this)"><div class="nm">Fondo de Inv. Privado Aconcagua-Confuturo II <span class="toggle-btn expanded-icon" id="btn-confuturo">+</span></div><div class="cod">[1350]</div><div class="rut">77.447.468-4</div><div class="pct">50% / 50% Cía. de Seguros Confuturo S.A.</div></div>
+            <div class="cn in has-children" onclick="toggleSub('sub-confuturo', this)"><div class="nm">Fondo de Inv. Privado Aconcagua-Confuturo II <span class="toggle-btn expanded-icon" id="btn-confuturo">&#43;</span></div><div class="cod">[1350]</div><div class="rut">77.447.468-4</div><div class="pct">50% / 50% C&#237;a. de Seguros Confuturo S.A.</div></div>
             <div class="sub-wrap in-border collapsible" id="sub-confuturo">
               <div class="cn in in-sub"><div class="nm">Rentas Miraflores SpA</div><div class="cod">[1342]</div><div class="rut">77.374.989-2</div><div class="pct">90% / 10% Lunia Miraflores SpA</div></div>
             </div>
           </div>
-          <div class="cn in"><div class="nm">Inversiones Industriales SpA</div><div class="cod">[1375]</div><div class="rut">78.226.089-8</div><div class="pct">50% / 50% Invers. Logísticas SpA</div></div>
+          <div class="cn in"><div class="nm">Inversiones Industriales SpA</div><div class="cod">[1375]</div><div class="rut">78.226.089-8</div><div class="pct">50% / 50% Invers. Log&#237;sticas SpA</div></div>
           <div class="cn in" id="nodo-rut">
-            <div class="nm">Rentas Maipú SpA</div>
+            <div class="nm">Rentas Maip&#250; SpA</div>
             <div class="cod">[Por definir]</div>
             <div class="pct">50% / 50% Socio por definir</div>
-            <div class="alerta-rut">⚠ RUT pendiente de creación</div>
+            <div class="alerta-rut">&#9888; RUT pendiente de creaci&#243;n</div>
           </div>
         </div></div>
       </div>
 
       <div class="cat-col" id="col-residencial">
-        <div class="cat-pill" style="background:#4A3B8C" onclick="toggleCat('sub-cat-residencial', this)" title="Colapsar/expandir Residencial">Residencial <span class="cat-toggle" style="transform: rotate(0deg);">+</span></div>
-        <div class="cat-nodes-wrap collapsed" id="sub-cat-residencial" style="max-height: 324px;"><div class="cat-nodes">
+        <div class="cat-pill" style="background:#4A3B8C" onclick="toggleCat('sub-cat-residencial', this)" title="Colapsar/expandir Residencial">Residencial <span class="cat-toggle" style="transform:rotate(45deg)">&#43;</span></div>
+        <div class="cat-nodes-wrap" id="sub-cat-residencial"><div class="cat-nodes">
           <div>
-            <div class="cn re has-children" onclick="toggleSub('sub-ameris', this)"><div class="nm">Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI <span class="toggle-btn expanded-icon" id="btn-ameris">+</span></div><div class="cod">[1376]</div><div class="pct">35% / 65% Ameris y otros</div></div>
+            <div class="cn re has-children" onclick="toggleSub('sub-ameris', this)"><div class="nm">Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI <span class="toggle-btn expanded-icon" id="btn-ameris">&#43;</span></div><div class="cod">[1376]</div><div class="pct">35% / 65% Ameris y otros</div></div>
             <div class="sub-wrap re-border collapsible" id="sub-ameris">
-              <div class="cn re re-sub"><div class="nm">Inmobiliaria MF Uno SpA</div><div class="cod">[1355]</div><div class="rut">77.765.203-6</div><div class="pct">100% · Multifamily Rodrigo de Araya</div></div>
-              <div class="cn re re-sub"><div class="nm">Inmobiliaria MF Dos SpA</div><div class="cod">[1353]</div><div class="rut">77.765.211-7</div><div class="pct">100% · Multifamily El Ulmo</div></div>
-              <div class="cn re re-sub"><div class="nm">Inmobiliaria MF Tres SpA</div><div class="cod">[1354]</div><div class="rut">77.765.214-1</div><div class="pct">100% · Multifamily Vicuña Mackenna</div></div>
+              <div class="cn re re-sub"><div class="nm">Inmobiliaria MF Uno SpA</div><div class="cod">[1355]</div><div class="rut">77.765.203-6</div><div class="pct">100% &middot; Multifamily Rodrigo de Araya</div></div>
+              <div class="cn re re-sub"><div class="nm">Inmobiliaria MF Dos SpA</div><div class="cod">[1353]</div><div class="rut">77.765.211-7</div><div class="pct">100% &middot; Multifamily El Ulmo</div></div>
+              <div class="cn re re-sub"><div class="nm">Inmobiliaria MF Tres SpA</div><div class="cod">[1354]</div><div class="rut">77.765.214-1</div><div class="pct">100% &middot; Multifamily Vicu&#241;a Mackenna</div></div>
             </div>
           </div>
         </div></div>
       </div>
 
       <div class="cat-col" id="col-colegios">
-        <div class="cat-pill" style="background:#7B3F00" onclick="toggleCat('sub-cat-colegios', this)" title="Colapsar/expandir Colegios">Colegios <span class="cat-toggle" style="transform: rotate(0deg);">+</span></div>
-        <div class="cat-nodes-wrap collapsed" id="sub-cat-colegios" style="max-height: 76px;"><div class="cat-nodes">
+        <div class="cat-pill" style="background:#7B3F00" onclick="toggleCat('sub-cat-colegios', this)" title="Colapsar/expandir Colegios">Colegios <span class="cat-toggle" style="transform:rotate(45deg)">&#43;</span></div>
+        <div class="cat-nodes-wrap" id="sub-cat-colegios"><div class="cat-nodes">
           <div class="cn co"><div class="nm">Inmobiliaria Padre Hurtado SpA</div><div class="cod">[1306]</div><div class="rut">76.960.346-8</div><div class="pct">50% / 50% Inm. e Inv. Boston SpA</div></div>
         </div></div>
       </div>
 
       <div class="cat-col" id="col-nn">
-        <div class="cat-pill" style="background:#4A4A4A" onclick="toggleCat('sub-cat-nn', this)" title="Colapsar/expandir NN">NN <span class="cat-toggle" style="transform: rotate(0deg);">+</span></div>
-        <div class="cat-nodes-wrap collapsed" id="sub-cat-nn" style="max-height: 219px;"><div class="cat-nodes">
+        <div class="cat-pill" style="background:#4A4A4A" onclick="toggleCat('sub-cat-nn', this)" title="Colapsar/expandir NN">NN <span class="cat-toggle" style="transform:rotate(45deg)">&#43;</span></div>
+        <div class="cat-nodes-wrap" id="sub-cat-nn"><div class="cat-nodes">
           <div class="cn nn"><div class="nm">Inmobiliaria Tierra del Sol S.A.</div><div class="rut">96.796.170-1</div><div class="pct">99% / 1% Inmobiliaria Aconcagua S.A.</div></div>
-          <div class="cn nn"><div class="nm">Inmobiliaria Obispo Salas SpA</div><div class="rut">76.168.212-1</div><div class="pct">50% / 50% Inversiones y Asesorías H y C S.A.</div></div>
+          <div class="cn nn"><div class="nm">Inmobiliaria Obispo Salas SpA</div><div class="rut">76.168.212-1</div><div class="pct">50% / 50% Inversiones y Asesor&#237;as H y C S.A.</div></div>
           <div class="cn nn"><div class="nm">Administradora de Fondos de Inv. San Rafael S.A.</div><div class="rut">76.153.005-4</div><div class="pct">99,9% / 0,1% Inmobiliaria Aconcagua S.A.</div></div>
         </div>
       </div>
@@ -371,7 +372,7 @@
   </div>
 </div>
 
-<div class="footer">Rentas y Desarrollo Aconcagua S.A. · Uso interno · SalfaCorp S.A.</div>
+<div class="footer">Rentas y Desarrollo Aconcagua S.A. &middot; Uso interno &middot; SalfaCorp S.A.</div>
 
 <script>
 function draw() {
@@ -545,6 +546,7 @@ function toggleTodas() {
 
 // Al cargar: colapsar todas las categorías por defecto
 window.addEventListener('load', function() {
+  renderDiagrama();
   setTimeout(function() {
     colapsar('sub-cat-tierra',      '#col-tierra');
     colapsar('sub-cat-comercial',   '#col-comercial');
@@ -742,222 +744,31 @@ var CAT_COLORES = {tierra:'#7B4F00',comercial:'#1565C0',industrial:'#2E5902',res
 var CAT_LABELS  = {tierra:'Tierra',comercial:'Comercial',industrial:'Industrial',residencial:'Residencial',colegios:'Colegios',nn:'NN'};
 
 var SOCIEDADES = [
-  {
-    "nombre": "Inmobiliaria Laguna del Sol SpA",
-    "codigo": "1272",
-    "rut": "76.499.908-8",
-    "pct": "100%",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "El Peñón SpA",
-    "codigo": "1247",
-    "rut": "76.349.965-0",
-    "pct": "100%",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "El Peñón S.A.",
-    "codigo": "1120",
-    "rut": "96.852.020-2",
-    "pct": "99,9995% / 0,0005% Salfa Gestión",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inm. e Inv. Rentas Antofagasta SpA",
-    "codigo": "1266",
-    "rut": "76.458.119-9",
-    "pct": "50% / 50% Soc. Avícola Pollos Tuculas",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Alto Volcanes SpA",
-    "codigo": "1305",
-    "rut": "76.934.005-k",
-    "pct": "50% / 50% Inv. y Asesorías HyC S.A.",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Borde Blanco SpA",
-    "codigo": "1310",
-    "rut": "77.009.559-k",
-    "pct": "50% / 50% Inm. e Inv. Boston SpA",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Nueva Inmobiliaria La Portada SpA",
-    "codigo": "1255",
-    "rut": "76.414.376-0",
-    "pct": "50% / 50% Soc. Avícola Pollos Kutuls",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Soc. Inm. e Inv. Rentas Quilin SpA",
-    "codigo": "1271",
-    "rut": "76.509.835-1",
-    "pct": "50% / 50% Desarrollos Comerciales Quilin S.A.",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Rentas Vizcachas SpA",
-    "codigo": "1304",
-    "rut": "76.923.701-1",
-    "pct": "50% / 50% Escafe Dos SpA",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Costa Laguna SpA",
-    "codigo": "1373",
-    "rut": "78.210.408-K",
-    "pct": "100%",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Eyzaguirre SpA",
-    "codigo": "1374",
-    "rut": "78.192.084-3",
-    "pct": "100%",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inm. Vivo Santiago SpA",
-    "codigo": "1370",
-    "rut": "77.073.978-0",
-    "pct": "20% / 40% Immob. Puente / 40% Cía. de Seguros Confuturo",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Lo Marcoleta SpA",
-    "codigo": "1348",
-    "rut": "76.460.349-2",
-    "pct": "50% / 50% Inm. Todos Los Santos S.A.",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Brisas Norte SpA",
-    "codigo": "1349",
-    "rut": "77.460.341-7",
-    "pct": "50% / 50% Inm. Todos Los Santos S.A.",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inm. e Inv. Rentas Chicureo SpA",
-    "codigo": "",
-    "rut": "76.153.005-4",
-    "pct": "50% / 50% Desarrollos Comerciales Chicureo S.A.",
-    "cat": "comercial",
-    "alerta": "cerrar"
-  },
-  {
-    "nombre": "Rentas Industriales Stgo / Novofarma",
-    "codigo": "1365",
-    "rut": "77.878.834-9",
-    "pct": "50% / 50% Frontal Trust Desarrollos Industriales I FI",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas El Noviciado / Proyecto Easy",
-    "codigo": "1356",
-    "rut": "77.454.601-4",
-    "pct": "50% / 50% Frontal Trust Desarrollos Industriales I FI",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Fondo de Inv. Privado Aconcagua-Confuturo II",
-    "codigo": "1350",
-    "rut": "77.447.468-4",
-    "pct": "50% / 50% Cía. de Seguros Confuturo S.A.",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inversiones Industriales SpA",
-    "codigo": "1375",
-    "rut": "78.226.089-8",
-    "pct": "50% / 50% Invers. Logísticas SpA",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Maipú SpA",
-    "codigo": "",
-    "rut": "",
-    "pct": "50% / 50% Socio por definir",
-    "cat": "industrial",
-    "alerta": "rut"
-  },
-  {
-    "nombre": "Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI",
-    "codigo": "1376",
-    "rut": "",
-    "pct": "35% / 65% Ameris y otros",
-    "cat": "residencial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Padre Hurtado SpA",
-    "codigo": "1306",
-    "rut": "76.960.346-8",
-    "pct": "50% / 50% Inm. e Inv. Boston SpA",
-    "cat": "colegios",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Tierra del Sol S.A.",
-    "codigo": "",
-    "rut": "96.796.170-1",
-    "pct": "99% / 1% Inmobiliaria Aconcagua S.A.",
-    "cat": "nn",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Obispo Salas SpA",
-    "codigo": "",
-    "rut": "76.168.212-1",
-    "pct": "50% / 50% Inversiones y Asesorías H y C S.A.",
-    "cat": "nn",
-    "alerta": ""
-  },
-  {
-    "nombre": "Administradora de Fondos de Inv. San Rafael S.A.",
-    "codigo": "",
-    "rut": "76.153.005-4",
-    "pct": "99,9% / 0,1% Inmobiliaria Aconcagua S.A.",
-    "cat": "nn",
-    "alerta": ""
-  },
-  {
-    "nombre": "XX 2025",
-    "codigo": "2025",
-    "rut": "11.234.1231-4",
-    "pct": "100%",
-    "cat": "residencial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Sociedad Nueva Re Prueba",
-    "codigo": "1113",
-    "rut": "19.749.385-5",
-    "pct": "100%",
-    "cat": "colegios",
-    "alerta": ""
-  }
+  {nombre:"Inmobiliaria Laguna del Sol SpA",codigo:"1272",rut:"76.499.908-8",pct:"100%",cat:"tierra",alerta:""},
+  {nombre:"El Pe\u00f1\u00f3n SpA",codigo:"1247",rut:"76.349.965-0",pct:"100%",cat:"tierra",alerta:""},
+  {nombre:"El Pe\u00f1\u00f3n S.A.",codigo:"1120",rut:"96.852.020-2",pct:"99,9995% / 0,0005% Salfa Gesti\u00f3n",cat:"tierra",alerta:""},
+  {nombre:"Inm. e Inv. Rentas Antofagasta SpA",codigo:"1266",rut:"76.458.119-9",pct:"50% / 50% Soc. Av\u00edcola Pollos Tuculas",cat:"tierra",alerta:""},
+  {nombre:"Inmobiliaria Alto Volcanes SpA",codigo:"1305",rut:"76.934.005-k",pct:"50% / 50% Inv. y Asesor\u00edas HyC S.A.",cat:"tierra",alerta:""},
+  {nombre:"Inmobiliaria Borde Blanco SpA",codigo:"1310",rut:"77.009.559-k",pct:"50% / 50% Inm. e Inv. Boston SpA",cat:"tierra",alerta:""},
+  {nombre:"Nueva Inmobiliaria La Portada SpA",codigo:"1255",rut:"76.414.376-0",pct:"50% / 50% Soc. Av\u00edcola Pollos Kutuls",cat:"tierra",alerta:""},
+  {nombre:"Soc. Inm. e Inv. Rentas Quilin SpA",codigo:"1271",rut:"76.509.835-1",pct:"50% / 50% Desarrollos Comerciales Quilin S.A.",cat:"comercial",alerta:""},
+  {nombre:"Inmobiliaria Rentas Vizcachas SpA",codigo:"1304",rut:"76.923.701-1",pct:"50% / 50% Escafe Dos SpA",cat:"comercial",alerta:""},
+  {nombre:"Rentas Costa Laguna SpA",codigo:"1373",rut:"78.210.408-K",pct:"100%",cat:"comercial",alerta:""},
+  {nombre:"Rentas Eyzaguirre SpA",codigo:"1374",rut:"78.192.084-3",pct:"100%",cat:"comercial",alerta:""},
+  {nombre:"Inm. Vivo Santiago SpA",codigo:"1370",rut:"77.073.978-0",pct:"20% / 40% Immob. Puente / 40% C\u00eda. de Seguros Confuturo",cat:"comercial",alerta:""},
+  {nombre:"Rentas Lo Marcoleta SpA",codigo:"1348",rut:"76.460.349-2",pct:"50% / 50% Inm. Todos Los Santos S.A.",cat:"comercial",alerta:""},
+  {nombre:"Rentas Brisas Norte SpA",codigo:"1349",rut:"77.460.341-7",pct:"50% / 50% Inm. Todos Los Santos S.A.",cat:"comercial",alerta:""},
+  {nombre:"Inm. e Inv. Rentas Chicureo SpA",codigo:"",rut:"76.153.005-4",pct:"50% / 50% Desarrollos Comerciales Chicureo S.A.",cat:"comercial",alerta:"cerrar"},
+  {nombre:"Rentas Industriales Stgo / Novofarma",codigo:"1365",rut:"77.878.834-9",pct:"50% / 50% Frontal Trust Desarrollos Industriales I FI",cat:"industrial",alerta:""},
+  {nombre:"Rentas El Noviciado / Proyecto Easy",codigo:"1356",rut:"77.454.601-4",pct:"50% / 50% Frontal Trust Desarrollos Industriales I FI",cat:"industrial",alerta:""},
+  {nombre:"Fondo de Inv. Privado Aconcagua-Confuturo II",codigo:"1350",rut:"77.447.468-4",pct:"50% / 50% C\u00eda. de Seguros Confuturo S.A.",cat:"industrial",alerta:""},
+  {nombre:"Inversiones Industriales SpA",codigo:"1375",rut:"78.226.089-8",pct:"50% / 50% Invers. Log\u00edsticas SpA",cat:"industrial",alerta:""},
+  {nombre:"Rentas Maip\u00fa SpA",codigo:"",rut:"",pct:"50% / 50% Socio por definir",cat:"industrial",alerta:"rut"},
+  {nombre:"Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI",codigo:"1376",rut:"",pct:"35% / 65% Ameris y otros",cat:"residencial",alerta:""},
+  {nombre:"Inmobiliaria Padre Hurtado SpA",codigo:"1306",rut:"76.960.346-8",pct:"50% / 50% Inm. e Inv. Boston SpA",cat:"colegios",alerta:""},
+  {nombre:"Inmobiliaria Tierra del Sol S.A.",codigo:"",rut:"96.796.170-1",pct:"99% / 1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""},
+  {nombre:"Inmobiliaria Obispo Salas SpA",codigo:"",rut:"76.168.212-1",pct:"50% / 50% Inversiones y Asesor\u00edas H y C S.A.",cat:"nn",alerta:""},
+  {nombre:"Administradora de Fondos de Inv. San Rafael S.A.",codigo:"",rut:"76.153.005-4",pct:"99,9% / 0,1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""}
 ];
 
 function show(id) { document.getElementById(id).style.display = 'flex'; }
@@ -1107,6 +918,7 @@ async function publicarGitHub() {
 
     // Reemplazar SOCIEDADES en el string
     status.textContent = 'Actualizando datos...';
+    renderDiagrama();
     // Buscar inicio de SOCIEDADES
     var marca = 'var SOCIEDADES = ';
     var si = currentHTML.indexOf(marca);
@@ -1163,14 +975,27 @@ async function publicarGitHub() {
 }
 
 function exportarHTML() {
+  // Primero renderizar el diagrama con los datos actuales
+  renderDiagrama();
+
+  // Tomar el HTML actualizado del DOM
   var htmlContent = document.documentElement.outerHTML;
-  var marca = 'var SOCIEDADES = [';
-  var marcaFin = '\n];';
+
+  // Actualizar el array SOCIEDADES en el script
+  var marca = 'var SOCIEDADES = ';
   var si = htmlContent.indexOf(marca);
   if (si !== -1) {
-    var ei = htmlContent.indexOf(marcaFin, si) + marcaFin.length;
+    var bracketStart = htmlContent.indexOf('[', si + marca.length);
+    var depth = 0;
+    var ei = bracketStart;
+    for (var ci = bracketStart; ci < htmlContent.length; ci++) {
+      if (htmlContent[ci] === '[') depth++;
+      else if (htmlContent[ci] === ']') { depth--; if (depth === 0) { ei = ci + 1; break; } }
+    }
+    while (ei < htmlContent.length && (htmlContent[ei] === ';' || htmlContent[ei] === ' ')) ei++;
     htmlContent = htmlContent.substring(0, si) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + htmlContent.substring(ei);
   }
+
   var blob = new Blob(['<!DOCTYPE html>\n' + htmlContent], {type:'text/html;charset=utf-8'});
   var a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -1189,13 +1014,13 @@ document.addEventListener('keydown', function(e) {
 
 </script>
 <!-- BTN ADMIN -->
-<button id="btn-admin" onclick="abrirAdmin()" title="Administración" style="position:fixed;bottom:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.1);border:none;cursor:pointer;font-size:16px;color:rgba(0,0,0,0.3);z-index:1000;display:flex;align-items:center;justify-content:center;">⚙</button>
+<button id="btn-admin" onclick="abrirAdmin()" title="Administración" style="position:fixed;bottom:20px;right:20px;width:36px;height:36px;border-radius:50%;background:rgba(0,0,0,0.1);border:none;cursor:pointer;font-size:16px;color:rgba(0,0,0,0.3);z-index:1000;display:flex;align-items:center;justify-content:center;">&#9881;</button>
 
 <!-- LOGIN -->
-<div id="overlay-login" style="display: none; position: fixed; inset: 0px; background: rgba(0, 0, 0, 0.5); z-index: 2000; align-items: center; justify-content: center;">
+<div id="overlay-login" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:12px;padding:28px;width:400px;max-width:95vw;box-shadow:0 20px 60px rgba(0,0,0,0.25);position:relative;">
-    <button onclick="document.getElementById('overlay-login').style.display='none'" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;">×</button>
-    <h2 style="font-size:15px;font-weight:700;margin-bottom:18px;">🔒 Acceso restringido</h2>
+    <button onclick="document.getElementById('overlay-login').style.display='none'" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;">&#215;</button>
+    <h2 style="font-size:15px;font-weight:700;margin-bottom:18px;">&#128274; Acceso restringido</h2>
     <label style="display:block;font-size:10px;font-weight:600;color:#555;margin-bottom:3px;text-transform:uppercase;">Usuario</label>
     <input type="text" id="login-user" placeholder="Usuario" autocomplete="off" style="width:100%;padding:8px 11px;border:1px solid rgba(0,0,0,0.18);border-radius:6px;font-size:13px;outline:none;margin-bottom:10px;">
     <label style="display:block;font-size:10px;font-weight:600;color:#555;margin-bottom:3px;text-transform:uppercase;">Contraseña</label>
@@ -1209,17 +1034,17 @@ document.addEventListener('keydown', function(e) {
 </div>
 
 <!-- PANEL -->
-<div id="overlay-panel" style="display: flex; position: fixed; inset: 0px; background: rgba(0, 0, 0, 0.5); z-index: 2000; align-items: center; justify-content: center;">
+<div id="overlay-panel" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:center;justify-content:center;">
   <div style="background:#fff;border-radius:12px;padding:28px;width:600px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.25);position:relative;">
-    <button onclick="document.getElementById('overlay-panel').style.display='none'" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;">×</button>
-    <h2 style="font-size:15px;font-weight:700;margin-bottom:16px;">⚙ Panel de Administración</h2>
+    <button onclick="document.getElementById('overlay-panel').style.display='none'" style="position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;cursor:pointer;color:#aaa;">&#215;</button>
+    <h2 style="font-size:15px;font-weight:700;margin-bottom:16px;">&#9881; Panel de Administración</h2>
     <div style="display:flex;gap:6px;margin-bottom:16px;border-bottom:1px solid rgba(0,0,0,0.08);padding-bottom:10px;">
-      <button class="atab" id="atab-lista" onclick="showATab('lista')" style="padding: 5px 13px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid transparent; background: none; color: rgb(136, 136, 136);">Sociedades</button>
-      <button class="atab" id="atab-nueva" onclick="showATab('nueva')" style="padding: 5px 13px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid transparent; background: none; color: rgb(136, 136, 136);">+ Nueva</button>
-      <button class="atab" id="atab-pub" onclick="showATab('pub')" style="padding: 5px 13px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; border: none; background: rgb(14, 51, 36); color: rgb(255, 255, 255);">Publicar</button>
+      <button class="atab" id="atab-lista" onclick="showATab('lista')" style="padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:#0E3324;color:#fff;">Sociedades</button>
+      <button class="atab" id="atab-nueva" onclick="showATab('nueva')" style="padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:#888;">+ Nueva</button>
+      <button class="atab" id="atab-pub" onclick="showATab('pub')" style="padding:5px 13px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1px solid transparent;background:none;color:#888;">Publicar</button>
     </div>
-    <div id="apanel-lista" style="display: none;"><div id="soc-list"><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Laguna del Sol SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1272] · 76.499.908-8</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(0)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(0)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">El Peñón SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1247] · 76.349.965-0</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(1)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(1)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">El Peñón S.A.<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1120] · 96.852.020-2</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(2)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(2)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inm. e Inv. Rentas Antofagasta SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1266] · 76.458.119-9</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(3)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(3)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Alto Volcanes SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1305] · 76.934.005-k</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(4)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(4)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Borde Blanco SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1310] · 77.009.559-k</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(5)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(5)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Nueva Inmobiliaria La Portada SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#7B4F00">Tierra</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1255] · 76.414.376-0</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(6)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(6)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Soc. Inm. e Inv. Rentas Quilin SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1271] · 76.509.835-1</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(7)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(7)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Rentas Vizcachas SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1304] · 76.923.701-1</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(8)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(8)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas Costa Laguna SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1373] · 78.210.408-K</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(9)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(9)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas Eyzaguirre SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1374] · 78.192.084-3</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(10)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(10)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inm. Vivo Santiago SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1370] · 77.073.978-0</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(11)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(11)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas Lo Marcoleta SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1348] · 76.460.349-2</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(12)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(12)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas Brisas Norte SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1349] · 77.460.341-7</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(13)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(13)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inm. e Inv. Rentas Chicureo SpA 🚫<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#1565C0">Comercial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">76.153.005-4</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(14)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(14)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas Industriales Stgo / Novofarma<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#2E5902">Industrial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1365] · 77.878.834-9</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(15)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(15)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas El Noviciado / Proyecto Easy<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#2E5902">Industrial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1356] · 77.454.601-4</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(16)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(16)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Fondo de Inv. Privado Aconcagua-Confuturo II<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#2E5902">Industrial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1350] · 77.447.468-4</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(17)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(17)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inversiones Industriales SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#2E5902">Industrial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1375] · 78.226.089-8</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(18)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(18)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Rentas Maipú SpA ⚠️<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#2E5902">Industrial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">Sin RUT</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(19)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(19)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#4A3B8C">Residencial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1376] · Sin RUT</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(20)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(20)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Padre Hurtado SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#C0522A">Colegios</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1306] · 76.960.346-8</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(21)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(21)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Tierra del Sol S.A.<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#4A4A4A">NN</span></div><div style="font-size:10px;color:#888;margin-top:1px;">96.796.170-1</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(22)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(22)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Inmobiliaria Obispo Salas SpA<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#4A4A4A">NN</span></div><div style="font-size:10px;color:#888;margin-top:1px;">76.168.212-1</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(23)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(23)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Administradora de Fondos de Inv. San Rafael S.A.<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#4A4A4A">NN</span></div><div style="font-size:10px;color:#888;margin-top:1px;">76.153.005-4</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(24)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(24)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">XX 2025<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#4A3B8C">Residencial</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[2025] · 11.234.1231-4</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(25)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(25)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div><div style="display:flex;align-items:center;justify-content:space-between;padding:7px 11px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);background:#fafafa;font-size:12px;margin-bottom:5px;"><div><div style="font-weight:600;color:#1a1a1a;">Sociedad Nueva Re Prueba<span style="font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;color:#fff;margin-left:5px;background:#C0522A">Colegios</span></div><div style="font-size:10px;color:#888;margin-top:1px;">[1113] · 19.749.385-5</div></div><div style="display:flex;gap:5px;flex-shrink:0;"><button onclick="editarSoc(26)" style="padding:5px 11px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Editar</button><button onclick="pedirEliminar(26)" style="padding:5px 11px;background:#fff0f0;color:#c0392b;border:1px solid rgba(192,57,43,0.25);border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;">Eliminar</button></div></div></div></div>
-    <div id="apanel-nueva" style="display: none;">
+    <div id="apanel-lista"><div id="soc-list"></div></div>
+    <div id="apanel-nueva" style="display:none;">
       <input type="hidden" id="edit-idx" value="-1">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;">
         <div style="grid-column:1/-1;">
@@ -1260,14 +1085,14 @@ document.addEventListener('keydown', function(e) {
         <button onclick="guardarSociedad()" style="padding:7px 16px;background:#0E3324;color:#fff;border:none;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">Guardar</button>
       </div>
     </div>
-    <div id="apanel-pub" style="display: block; text-align: center;">
+    <div id="apanel-pub" style="display:none;text-align:center;">
       <div style="background:#f5f9f5;border:1px solid rgba(14,51,36,0.15);border-radius:8px;padding:20px;">
         <p style="font-size:12px;color:#555;margin-bottom:14px;line-height:1.5;">Publica los cambios directamente en GitHub.<br>El reporte online se actualizará en segundos.</p>
-        <button id="btn-pub" onclick="publicarGitHub()" style="padding:10px 22px;background:#1a7f37;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;">☁ Publicar en GitHub</button>
+        <button id="btn-pub" onclick="publicarGitHub()" style="padding:10px 22px;background:#1a7f37;color:#fff;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;">&#9729; Publicar en GitHub</button>
         <div id="pub-status" style="display:none;margin-top:12px;font-size:12px;padding:10px 14px;border-radius:6px;"></div>
       </div>
       <div style="margin-top:12px;">
-        <button onclick="exportarHTML()" style="padding:7px 13px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">⬇ Descargar HTML</button>
+        <button onclick="exportarHTML()" style="padding:7px 13px;background:#f0f0f0;color:#444;border:1px solid rgba(0,0,0,0.12);border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;">&#11015; Descargar HTML</button>
       </div>
     </div>
   </div>
@@ -1285,5 +1110,5 @@ document.addEventListener('keydown', function(e) {
   </div>
 </div>
 
-
-</div></body></html>
+</body>
+</html>
