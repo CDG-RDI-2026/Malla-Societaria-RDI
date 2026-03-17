@@ -734,7 +734,7 @@ var ADMIN_PASS  = 'alan7898';
 var GH_TOKEN    = '';
 var GH_USER     = 'CDG-RDI-2026';
 var GH_REPO     = 'Malla-Societaria-RDI';
-var GH_FILE     = 'Malla_RDI_Societaria_Act.html';
+var GH_FILE     = 'Malla_RDI_v2.html';
 var GH_BRANCH   = 'main';
 var autenticado = false;
 var idxEliminar = -1;
@@ -917,11 +917,24 @@ async function publicarGitHub() {
 
     // Reemplazar SOCIEDADES en el string
     status.textContent = 'Actualizando datos...';
-    var marca = 'var SOCIEDADES = [';
-    var marcaFin = '\n];';
+    // Buscar inicio de SOCIEDADES
+    var marca = 'var SOCIEDADES = ';
     var si = currentHTML.indexOf(marca);
     if (si === -1) throw new Error('Marcador SOCIEDADES no encontrado.');
-    var ei = currentHTML.indexOf(marcaFin, si) + marcaFin.length;
+    // Buscar el fin: puede terminar en ]; o ]; o ];\n
+    // Avanzar desde si hasta encontrar el cierre del array + ;
+    var searchFrom = si + marca.length;
+    // Encontrar el primer [ después de la marca
+    var bracketStart = currentHTML.indexOf('[', searchFrom);
+    // Contar brackets para encontrar el cierre
+    var depth = 0;
+    var ei = bracketStart;
+    for (var ci = bracketStart; ci < currentHTML.length; ci++) {
+      if (currentHTML[ci] === '[') depth++;
+      else if (currentHTML[ci] === ']') { depth--; if (depth === 0) { ei = ci + 1; break; } }
+    }
+    // Avanzar hasta después del ; si existe
+    while (ei < currentHTML.length && (currentHTML[ei] === ';' || currentHTML[ei] === ' ')) ei++;
     var nuevoHTML = currentHTML.substring(0, si) +
                    'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' +
                    currentHTML.substring(ei);
@@ -946,7 +959,7 @@ async function publicarGitHub() {
     status.style.color = '#2E7D32';
     status.style.border = '1px solid rgba(46,125,50,0.2)';
     status.innerHTML = '\u2705 <strong>\u00a1Publicado con \u00e9xito!</strong> El reporte se actualizar\u00e1 en unos segundos.<br>' +
-      '<a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_Societaria_Act.html" target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte \u2192</a>';
+      '<a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_v2.html" target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte \u2192</a>';
 
   } catch(e) {
     status.style.background = '#fff0f0';
