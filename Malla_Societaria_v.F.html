@@ -847,11 +847,7 @@ function generarHTMLActualizado() {
 
   // Reemplazar el array SOCIEDADES con el actualizado
   var socJSON = JSON.stringify(SOCIEDADES, null, 2);
-  baseHTML = baseHTML.replace(
-    /var SOCIEDADES = \[[\s\S]*?
-\];/,
-    'var SOCIEDADES = ' + socJSON + ';'
-  );
+  baseHTML = baseHTML
 
   // Reemplazar los cat-nodes de cada categoría
   cats.forEach(function(cat) {
