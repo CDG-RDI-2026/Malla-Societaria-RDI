@@ -176,6 +176,52 @@
   }
   #btn-mostrar-todas:hover { background: #e2e2e2; transform: scale(1.03); }
   #btn-mostrar-todas.expandido { background: #e8f0e8; color: #2E5902; border-color: rgba(46,89,2,0.25); }
+
+  #btn-admin { position:fixed; bottom:20px; right:20px; width:36px; height:36px; border-radius:50%; background:rgba(0,0,0,0.1); border:none; cursor:pointer; font-size:16px; color:rgba(0,0,0,0.3); transition:all 0.2s; z-index:1000; display:flex; align-items:center; justify-content:center; }
+  #btn-admin:hover { background:rgba(0,0,0,0.2); transform:scale(1.1); color:rgba(0,0,0,0.6); }
+  .admin-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center; }
+  .admin-overlay.visible { display:flex; }
+  .admin-modal { background:#fff; border-radius:12px; padding:28px; width:480px; max-width:95vw; max-height:90vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,0.25); position:relative; }
+  .admin-modal h2 { font-size:15px; font-weight:700; color:#1a1a1a; margin-bottom:18px; }
+  .admin-modal .close-btn { position:absolute; top:14px; right:14px; background:none; border:none; font-size:20px; cursor:pointer; color:rgba(0,0,0,0.35); }
+  .admin-modal .close-btn:hover { color:#1a1a1a; }
+  .login-form label { display:block; font-size:10px; font-weight:600; color:#555; margin-bottom:3px; margin-top:12px; text-transform:uppercase; letter-spacing:.05em; }
+  .login-form input { width:100%; padding:8px 11px; border:1px solid rgba(0,0,0,0.18); border-radius:6px; font-size:13px; outline:none; }
+  .login-form input:focus { border-color:#0E3324; }
+  .login-error { color:#e05555; font-size:12px; margin-top:8px; display:none; }
+  .btn-primary { width:100%; margin-top:16px; padding:10px; background:#0E3324; color:#fff; border:none; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
+  .btn-primary:hover { background:#174d36; }
+  .btn-secondary { padding:7px 13px; background:#f0f0f0; color:#444; border:1px solid rgba(0,0,0,0.12); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
+  .btn-secondary:hover { background:#e2e2e2; }
+  .btn-danger { padding:7px 13px; background:#fff0f0; color:#c0392b; border:1px solid rgba(192,57,43,0.25); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
+  .btn-danger:hover { background:#ffe0e0; }
+  .admin-tabs { display:flex; gap:6px; margin-bottom:16px; border-bottom:1px solid rgba(0,0,0,0.08); padding-bottom:10px; }
+  .admin-tab { padding:5px 13px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid transparent; background:none; color:#888; }
+  .admin-tab.active { background:#0E3324; color:#fff; }
+  .admin-tab:hover:not(.active) { background:#f0f0f0; color:#333; }
+  .soc-list { display:flex; flex-direction:column; gap:5px; margin-bottom:12px; }
+  .soc-item { display:flex; align-items:center; justify-content:space-between; padding:7px 11px; border-radius:6px; border:1px solid rgba(0,0,0,0.08); background:#fafafa; font-size:12px; }
+  .soc-name { font-weight:600; color:#1a1a1a; }
+  .soc-meta { font-size:10px; color:#888; margin-top:1px; }
+  .soc-item-actions { display:flex; gap:5px; flex-shrink:0; }
+  .cat-badge { font-size:9px; font-weight:700; padding:2px 7px; border-radius:99px; color:#fff; margin-left:5px; }
+  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
+  .form-grid .full { grid-column:1/-1; }
+  .form-group label { display:block; font-size:10px; font-weight:600; color:#666; margin-bottom:3px; text-transform:uppercase; letter-spacing:.04em; }
+  .form-group input, .form-group select { width:100%; padding:7px 10px; border:1px solid rgba(0,0,0,0.15); border-radius:5px; font-size:12px; outline:none; background:#fff; }
+  .form-group input:focus, .form-group select:focus { border-color:#0E3324; }
+  .form-actions { display:flex; gap:8px; margin-top:14px; justify-content:flex-end; }
+  .export-section { background:#f5f9f5; border:1px solid rgba(14,51,36,0.15); border-radius:8px; padding:16px; text-align:center; }
+  .export-section p { font-size:12px; color:#555; margin-bottom:12px; line-height:1.5; }
+  .btn-export { padding:10px 22px; background:#1a7f37; color:#fff; border:none; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
+  .btn-export:hover { background:#166d30; }
+  .btn-export:disabled { background:#aaa; cursor:not-allowed; }
+  #publish-status { margin-top:12px; font-size:12px; display:none; padding:10px 14px; border-radius:6px; }
+  #publish-status.loading { background:#f5f5f5; color:#555; border:1px solid rgba(0,0,0,0.1); }
+  #publish-status.success { background:#f0faf0; color:#2E7D32; border:1px solid rgba(46,125,50,0.2); }
+  #publish-status.error   { background:#fff0f0; color:#c0392b; border:1px solid rgba(192,57,43,0.2); }
+  .co { background: #C0522A; }
+
 </style>
 </head>
 <body>
@@ -199,7 +245,7 @@
   <div class="ley-item" onclick="irCategoria('col-comercial', 'sub-cat-comercial')" title="Ir a Comercial"><div class="ley-dot" style="background:#2979C8"></div> Comercial</div>
   <div class="ley-item" onclick="irCategoria('col-industrial', 'sub-cat-industrial')" title="Ir a Industrial"><div class="ley-dot" style="background:#4A8C0A"></div> Industrial</div>
   <div class="ley-item" onclick="irCategoria('col-residencial', 'sub-cat-residencial')" title="Ir a Residencial"><div class="ley-dot" style="background:#7B6FCC"></div> Residencial</div>
-  <div class="ley-item" onclick="irCategoria('col-colegios', 'sub-cat-colegios')" title="Ir a Colegios"><div class="ley-dot" style="background:#C0522A"></div> Colegios</div>
+  <div class="ley-item" onclick="irCategoria('col-colegios', 'sub-cat-colegios')" title="Ir a Colegios"><div class="ley-dot" style="background:#7B3F00"></div> Colegios</div>
   <div class="ley-item" onclick="irCategoria('col-nn', 'sub-cat-nn')" title="Ir a NN"><div class="ley-dot" style="background:#555"></div> NN</div>
   <div class="ley-item"><div class="ley-dot" style="background:#3D2700;border:1px solid #A06020;opacity:0.7"></div> Sub-sociedad</div>
   <button id="btn-mostrar-todas" onclick="toggleTodas()">&#9660; Ver todo</button>
@@ -351,7 +397,7 @@ function draw() {
     { id:'col-comercial',   color:'#2979C8' },
     { id:'col-industrial',  color:'#4A8C0A' },
     { id:'col-residencial', color:'#7B6FCC' },
-    { id:'col-colegios',    color:'#C0522A' },
+    { id:'col-colegios',    color:'#C05A00' },
     { id:'col-nn',          color:'#888888' }
   ];
 
@@ -428,7 +474,7 @@ function colapsar(wrapId, pillSelector) {
     wrap.getBoundingClientRect();
     wrap.classList.add('collapsed');
     var btn = document.querySelector(pillSelector + ' .cat-toggle');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
+    if (btn) btn.style.transform = 'rotate(0deg)';
   }
 }
 
@@ -438,7 +484,7 @@ function expandir(wrapId, pillSelector) {
   if (wrap.classList.contains('collapsed')) {
     wrap.classList.remove('collapsed');
     var btn = document.querySelector(pillSelector + ' .cat-toggle');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; }
+    if (btn) btn.style.transform = 'rotate(45deg)';
   }
 }
 
@@ -448,7 +494,7 @@ function expandirSub(subId, parentSelector) {
   if (sub.classList.contains('collapsed')) {
     sub.classList.remove('collapsed');
     var btn = document.querySelector(parentSelector + ' .toggle-btn');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; }
+    if (btn) btn.style.transform = 'rotate(45deg)';
   }
 }
 
@@ -460,7 +506,7 @@ function colapsarSub(subId, parentSelector) {
     sub.getBoundingClientRect();
     sub.classList.add('collapsed');
     var btn = document.querySelector(parentSelector + ' .toggle-btn');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
+    if (btn) btn.style.transform = 'rotate(0deg)';
   }
 }
 
@@ -498,122 +544,8 @@ function toggleTodas() {
   setTimeout(draw, 380);
 }
 
-
-// ===== RENDERIZAR DIAGRAMA DESDE SOCIEDADES =====
-// Sub-nodos hardcodeados (relaciones padre-hijo fijas)
-var SUB_NODOS = {
-  '1255': {  // Nueva Inm. La Portada
-    cat: 'tierra',
-    borderClass: 't-border',
-    id: 'sub-portada',
-    btnId: 'btn-portada-parent',
-    hijos: [
-      {nombre:'Inmobiliaria La Portada SpA', codigo:'1121', rut:'99.516.320-9', pct:'100%', cls:'cn t t-sub'},
-      {nombre:'Inm. e Inv. Lutecia SpA', codigo:'1254', rut:'76.299.903-k', pct:'100%', cls:'cn t t-sub'},
-      {nombre:'Inm. e Inv. Lutecia II SpA', codigo:'1256', rut:'76.423.535-5', pct:'100%', cls:'cn t t-sub'}
-    ]
-  },
-  '1350': {  // Fondo Aconcagua-Confuturo II
-    cat: 'industrial',
-    borderClass: 'in-border',
-    id: 'sub-confuturo',
-    btnId: 'btn-confuturo-parent',
-    hijos: [
-      {nombre:'Rentas Miraflores SpA', codigo:'1342', rut:'77.374.989-2', pct:'90% / 10% Lunia Miraflores SpA', cls:'cn in in-sub'}
-    ]
-  },
-  '1376': {  // Fondo Ameris
-    cat: 'residencial',
-    borderClass: 're-border',
-    id: 'sub-ameris',
-    btnId: 'btn-ameris-parent',
-    hijos: [
-      {nombre:'Inmobiliaria MF Uno SpA', codigo:'1355', rut:'77.765.203-6', pct:'100% &middot; Multifamily Rodrigo de Araya', cls:'cn re re-sub'},
-      {nombre:'Inmobiliaria MF Dos SpA', codigo:'1353', rut:'77.765.211-7', pct:'100% &middot; Multifamily El Ulmo', cls:'cn re re-sub'},
-      {nombre:'Inmobiliaria MF Tres SpA', codigo:'1354', rut:'77.765.214-1', pct:'100% &middot; Multifamily Vicu&ntilde;a Mackenna', cls:'cn re re-sub'}
-    ]
-  }
-};
-
-
-function toggleSubById(parentNode) {
-  var subId = parentNode.getAttribute('data-subid');
-  if (!subId) return;
-  var sub = document.getElementById(subId);
-  var btn = parentNode.querySelector('.toggle-btn');
-  if (!sub) return;
-  if (sub.style.display === 'none' || sub.style.display === '') {
-    sub.style.display = 'flex';
-    sub.style.flexDirection = 'column';
-    sub.style.gap = '6px';
-    if (btn) { btn.textContent = '−'; btn.title = 'Colapsar'; }
-  } else {
-    sub.style.display = 'none';
-    if (btn) { btn.textContent = '+'; btn.title = 'Expandir'; }
-  }
-  setTimeout(draw, 100);
-}
-
-function renderDiagrama() {
-  var cats = ['tierra','comercial','industrial','residencial','colegios','nn'];
-  var catNodos = {};
-  cats.forEach(function(c) { catNodos[c] = []; });
-  SOCIEDADES.forEach(function(s) {
-    if (catNodos[s.cat] !== undefined) catNodos[s.cat].push(s);
-  });
-
-  var catClass = {tierra:'t', comercial:'cm', industrial:'in', residencial:'re', colegios:'co', nn:'nn'};
-
-  function nodoHTML(s) {
-    var cc = catClass[s.cat] || 'nn';
-    var cls = 'cn ' + cc + (s.alerta === 'cerrar' ? ' cn-cerrar' : '');
-    var idA = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
-    var alA = s.alerta === 'rut'    ? '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>' :
-              s.alerta === 'cerrar' ? '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>' : '';
-
-    var subInfo = s.codigo ? SUB_NODOS[s.codigo] : null;
-    var subId   = subInfo ? 'sub-' + s.codigo : '';
-    var toggleBtn = subInfo ? '<span class="toggle-btn" style="transform:rotate(0deg);" title="Expandir">+</span>' : '';
-    var nodeOnclick = subInfo ? ' data-subid="' + subId + '" onclick="toggleSubById(this)"' : '';
-
-    var nodeStr = '<div class="' + cls + '"' + idA + nodeOnclick + '>' +
-      '<div class="nm">' + s.nombre + toggleBtn + '</div>' +
-      (s.codigo ? '<div class="cod">[' + s.codigo + ']</div>' : '') +
-      (s.rut    ? '<div class="rut">' + s.rut + '</div>'    : '') +
-      (s.pct    ? '<div class="pct">' + s.pct + '</div>'    : '') +
-      alA + '</div>';
-
-    if (subInfo) {
-      var subStr = '<div class="sub-wrap ' + subInfo.borderClass + '" id="' + subId + '" style="display:none;margin-top:7px;">';
-      subInfo.hijos.forEach(function(h) {
-        subStr += '<div class="' + h.cls + '">' +
-          '<div class="nm">' + h.nombre + '</div>' +
-          '<div class="cod">[' + h.codigo + ']</div>' +
-          '<div class="rut">' + h.rut + '</div>' +
-          '<div class="pct">' + h.pct + '</div>' +
-          '</div>';
-      });
-      subStr += '</div>';
-      nodeStr = '<div>' + nodeStr + subStr + '</div>';
-    }
-
-    return nodeStr;
-  }
-
-  cats.forEach(function(cat) {
-    var col = document.getElementById('col-' + cat);
-    if (!col) return;
-    var wrap = col.querySelector('.cat-nodes-wrap');
-    if (!wrap) return;
-    var nodes = wrap.querySelector('.cat-nodes');
-    if (!nodes) return;
-    nodes.innerHTML = catNodos[cat].map(nodoHTML).join('\n');
-  });
-}
-
 // Al cargar: colapsar todas las categorías por defecto
 window.addEventListener('load', function() {
-  renderDiagrama();
   setTimeout(function() {
     colapsar('sub-cat-tierra',      '#col-tierra');
     colapsar('sub-cat-comercial',   '#col-comercial');
@@ -688,12 +620,12 @@ function toggleCat(wrapId, pillEl) {
   var isCollapsed = wrap.classList.contains('collapsed');
   if (isCollapsed) {
     wrap.classList.remove('collapsed');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; }
+    if (btn) btn.style.transform = 'rotate(45deg)';
   } else {
     wrap.style.maxHeight = wrap.scrollHeight + 'px';
     wrap.getBoundingClientRect();
     wrap.classList.add('collapsed');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
+    if (btn) btn.style.transform = 'rotate(0deg)';
   }
   setTimeout(draw, 370);
 }
@@ -706,19 +638,95 @@ function toggleSub(subId, parentNode) {
   var isCollapsed = sub.classList.contains('collapsed');
 
   if (isCollapsed) {
+    // Expandir
     sub.classList.remove('collapsed');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '−'; btn.title = 'Colapsar'; }
+    if (btn) {
+      btn.style.transform = 'rotate(45deg)';
+      btn.title = 'Colapsar';
+    }
   } else {
+    // Colapsar — primero fijar max-height al alto actual para que la transición funcione
     sub.style.maxHeight = sub.scrollHeight + 'px';
+    // forzar reflow
     sub.getBoundingClientRect();
     sub.classList.add('collapsed');
-    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; btn.title = 'Expandir'; }
+    if (btn) {
+      btn.style.transform = 'rotate(0deg)';
+      btn.title = 'Expandir';
+    }
   }
+
+  // Redibujar líneas SVG después de la transición
   setTimeout(draw, 320);
 }
 
 
 window.addEventListener('resize', draw);
+
+
+// ===== RENDERIZAR NODOS PRINCIPALES DESDE SOCIEDADES =====
+// Los sub-nodos (La Portada, Confuturo, Ameris) son hardcodeados en el HTML
+var CODIGOS_CON_SUBNODOS = ['1255', '1350', '1376'];
+
+function renderDiagrama() {
+  var cats = ['tierra','comercial','industrial','residencial','colegios','nn'];
+  var catNodos = {};
+  cats.forEach(function(c) { catNodos[c] = []; });
+  SOCIEDADES.forEach(function(s) {
+    if (catNodos[s.cat] !== undefined) catNodos[s.cat].push(s);
+  });
+
+  var catClass = {tierra:'t', comercial:'cm', industrial:'in', residencial:'re', colegios:'co', nn:'nn'};
+
+  function nodoHTML(s) {
+    var cc = catClass[s.cat] || 'nn';
+    var cls = 'cn ' + cc + (s.alerta === 'cerrar' ? ' cn-cerrar' : '');
+    var idA = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
+    var alA = s.alerta === 'rut'    ? '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>' :
+              s.alerta === 'cerrar' ? '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>' : '';
+
+    // Nodo simple sin sub-nodos
+    return '<div class="' + cls + '"' + idA + '>' +
+      '<div class="nm">' + s.nombre + '</div>' +
+      (s.codigo ? '<div class="cod">[' + s.codigo + ']</div>' : '') +
+      (s.rut    ? '<div class="rut">' + s.rut + '</div>'    : '') +
+      (s.pct    ? '<div class="pct">' + s.pct + '</div>'    : '') +
+      alA + '</div>';
+  }
+
+  cats.forEach(function(cat) {
+    var col = document.getElementById('col-' + cat);
+    if (!col) return;
+    var wrap = col.querySelector('.cat-nodes-wrap');
+    if (!wrap) return;
+    var nodes = wrap.querySelector('.cat-nodes');
+    if (!nodes) return;
+
+    // Obtener los nodos con sub-hijos que ya existen en el DOM (hardcodeados)
+    var subNodosExistentes = {};
+    CODIGOS_CON_SUBNODOS.forEach(function(cod) {
+      // Buscar el wrapper del sub-nodo dentro de esta categoría
+      var subEl = nodes.querySelector('#sub-' + cod);
+      if (subEl) {
+        var parentDiv = subEl.parentNode;
+        subNodosExistentes[cod] = parentDiv.outerHTML;
+      }
+    });
+
+    // Generar HTML de nodos
+    var html = '';
+    catNodos[cat].forEach(function(s) {
+      if (s.codigo && subNodosExistentes[s.codigo]) {
+        // Usar el HTML del sub-nodo existente (preserva funcionalidad)
+        html += subNodosExistentes[s.codigo];
+      } else {
+        html += nodoHTML(s);
+      }
+    });
+    nodes.innerHTML = html;
+  });
+}
+
 
 // ===== ADMIN PANEL =====
 var ADMIN_USER  = 'afacuna';
