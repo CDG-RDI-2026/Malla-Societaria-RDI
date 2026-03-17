@@ -927,8 +927,7 @@ async function publicarGitHub() {
     var sha = getJson.sha;
 
     // 2. Decodificar el contenido actual
-    var currentB64 = getJson.content.replace(/
-/g, '');
+    var currentB64 = getJson.content.split('\n').join('');
     var currentHTML = decodeURIComponent(escape(atob(currentB64)));
 
     // 3. Reemplazar solo el array SOCIEDADES en el string
