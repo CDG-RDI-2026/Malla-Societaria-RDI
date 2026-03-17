@@ -832,7 +832,7 @@ function generarHTMLActualizado() {
     if (s.alerta === 'cerrar') clases += ' cn-cerrar';
     var idAttr = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
     var alertaHTML = '';
-    if (s.alerta === 'rut')    alertaHTML = '<div class="alerta-rut">&#9888; RUT pendiente de creación</div>';
+    if (s.alerta === 'rut')    alertaHTML = '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>';
     if (s.alerta === 'cerrar') alertaHTML = '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>';
     return '<div class="' + clases + '"' + idAttr + '>' +
       '<div class="nm">' + s.nombre + '</div>' +
@@ -842,39 +842,43 @@ function generarHTMLActualizado() {
       alertaHTML + '</div>';
   }
 
-  var nRut    = SOCIEDADES.filter(function(s){ return s.alerta === 'rut'; }).length;
-  var nCerrar = SOCIEDADES.filter(function(s){ return s.alerta === 'cerrar'; }).length;
+  // Obtener el HTML base como string
+  var baseHTML = document.documentElement.outerHTML;
 
-  var clone = document.documentElement.cloneNode(true);
+  // Reemplazar el array SOCIEDADES con el actualizado
+  var socJSON = JSON.stringify(SOCIEDADES, null, 2);
+  baseHTML = baseHTML.replace(
+    /var SOCIEDADES = \[[\s\S]*?
+\];/,
+    'var SOCIEDADES = ' + socJSON + ';'
+  );
 
-  var bWarn = clone.querySelector('.badge-warn');
-  var bDang = clone.querySelector('.badge-danger');
-  if (bWarn) bWarn.setAttribute('onclick', "irAlerta('nodo-rut','col-industrial')");
-  if (bDang) bDang.setAttribute('onclick', "irAlerta('nodo-cerrar','col-comercial')");
-
-  // Actualizar SOCIEDADES en el script del clone
-  var scripts = clone.querySelectorAll('script');
-  scripts.forEach(function(sc) {
-    if (sc.textContent.includes('var SOCIEDADES =')) {
-      sc.textContent = sc.textContent.replace(
-        /var SOCIEDADES = \[[\s\S]*?\];/,
-        'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';'
-      );
-    }
-  });
-
-  // Actualizar nodos en cada categoría
+  // Reemplazar los cat-nodes de cada categoría
   cats.forEach(function(cat) {
-    var colEl = clone.querySelector('#col-' + cat);
+    var colEl = document.getElementById('col-' + cat);
     if (!colEl) return;
-    var wrapEl = colEl.querySelector('.cat-nodes-wrap');
-    if (!wrapEl) return;
-    var nodesEl = wrapEl.querySelector('.cat-nodes');
+    var nodesEl = colEl.querySelector('.cat-nodes');
     if (!nodesEl) return;
-    nodesEl.innerHTML = catNodos[cat].map(nodoHTML).join('\n');
+
+    // Generar nuevos nodos HTML
+    var nuevosNodos = catNodos[cat].map(nodoHTML).join('
+');
+
+    // Crear marcadores únicos para el reemplazo
+    var colId = 'col-' + cat;
+    // Buscar el contenido actual de cat-nodes y reemplazarlo
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(baseHTML, 'text/html');
+    var targetCol = doc.getElementById(colId);
+    if (targetCol) {
+      var targetNodes = targetCol.querySelector('.cat-nodes');
+      if (targetNodes) targetNodes.innerHTML = nuevosNodos;
+    }
+    baseHTML = '<!DOCTYPE html>
+' + doc.documentElement.outerHTML;
   });
 
-  return '<!DOCTYPE html>\n' + clone.outerHTML;
+  return baseHTML;
 }
 
 // ===================== DATOS DE SOCIEDADES =====================
