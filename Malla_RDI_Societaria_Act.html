@@ -498,8 +498,44 @@ function toggleTodas() {
   setTimeout(draw, 380);
 }
 
+
+// ===== RENDERIZAR DIAGRAMA DESDE SOCIEDADES =====
+function renderDiagrama() {
+  var cats = ['tierra','comercial','industrial','residencial','colegios','nn'];
+  var catNodos = {};
+  cats.forEach(function(c) { catNodos[c] = []; });
+  SOCIEDADES.forEach(function(s) {
+    if (catNodos[s.cat] !== undefined) catNodos[s.cat].push(s);
+  });
+
+  function nodoHTML(s) {
+    var catClass = {tierra:'t',comercial:'cm',industrial:'in',residencial:'re',colegios:'co',nn:'nn'};
+    var cls = 'cn ' + (catClass[s.cat] || s.cat) + (s.alerta === 'cerrar' ? ' cn-cerrar' : '');
+    var idA = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
+    var alA = s.alerta === 'rut'    ? '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>' :
+              s.alerta === 'cerrar' ? '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>' : '';
+    return '<div class="' + cls + '"' + idA + '>' +
+      '<div class="nm">' + s.nombre + '</div>' +
+      (s.codigo ? '<div class="cod">[' + s.codigo + ']</div>' : '') +
+      (s.rut    ? '<div class="rut">' + s.rut + '</div>'    : '') +
+      (s.pct    ? '<div class="pct">' + s.pct + '</div>'    : '') +
+      alA + '</div>';
+  }
+
+  cats.forEach(function(cat) {
+    var col = document.getElementById('col-' + cat);
+    if (!col) return;
+    var wrap = col.querySelector('.cat-nodes-wrap');
+    if (!wrap) return;
+    var nodes = wrap.querySelector('.cat-nodes');
+    if (!nodes) return;
+    nodes.innerHTML = catNodos[cat].map(nodoHTML).join('\n');
+  });
+}
+
 // Al cargar: colapsar todas las categorías por defecto
 window.addEventListener('load', function() {
+  renderDiagrama();
   setTimeout(function() {
     colapsar('sub-cat-tierra',      '#col-tierra');
     colapsar('sub-cat-comercial',   '#col-comercial');
@@ -621,214 +657,31 @@ var CAT_COLORES = {tierra:'#7B4F00',comercial:'#1565C0',industrial:'#2E5902',res
 var CAT_LABELS  = {tierra:'Tierra',comercial:'Comercial',industrial:'Industrial',residencial:'Residencial',colegios:'Colegios',nn:'NN'};
 
 var SOCIEDADES = [
-  {
-    "nombre": "Inmobiliaria Laguna del Sol SpA",
-    "codigo": "1272",
-    "rut": "76.499.908-8",
-    "pct": "100%",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "El Peñón SpA",
-    "codigo": "1247",
-    "rut": "76.349.965-0",
-    "pct": "100%",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "El Peñón S.A.",
-    "codigo": "1120",
-    "rut": "96.852.020-2",
-    "pct": "99,9995% / 0,0005% Salfa Gestión",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inm. e Inv. Rentas Antofagasta SpA",
-    "codigo": "1266",
-    "rut": "76.458.119-9",
-    "pct": "50% / 50% Soc. Avícola Pollos Tuculas",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Alto Volcanes SpA",
-    "codigo": "1305",
-    "rut": "76.934.005-k",
-    "pct": "50% / 50% Inv. y Asesorías HyC S.A.",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Borde Blanco SpA",
-    "codigo": "1310",
-    "rut": "77.009.559-k",
-    "pct": "50% / 50% Inm. e Inv. Boston SpA",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Nueva Inmobiliaria La Portada SpA",
-    "codigo": "1255",
-    "rut": "76.414.376-0",
-    "pct": "50% / 50% Soc. Avícola Pollos Kutuls",
-    "cat": "tierra",
-    "alerta": ""
-  },
-  {
-    "nombre": "Soc. Inm. e Inv. Rentas Quilin SpA",
-    "codigo": "1271",
-    "rut": "76.509.835-1",
-    "pct": "50% / 50% Desarrollos Comerciales Quilin S.A.",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Rentas Vizcachas SpA",
-    "codigo": "1304",
-    "rut": "76.923.701-1",
-    "pct": "50% / 50% Escafe Dos SpA",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Costa Laguna SpA",
-    "codigo": "1373",
-    "rut": "78.210.408-K",
-    "pct": "100%",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Eyzaguirre SpA",
-    "codigo": "1374",
-    "rut": "78.192.084-3",
-    "pct": "100%",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inm. Vivo Santiago SpA",
-    "codigo": "1370",
-    "rut": "77.073.978-0",
-    "pct": "20% / 40% Immob. Puente / 40% Cía. de Seguros Confuturo",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Lo Marcoleta SpA",
-    "codigo": "1348",
-    "rut": "76.460.349-2",
-    "pct": "50% / 50% Inm. Todos Los Santos S.A.",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Brisas Norte SpA",
-    "codigo": "1349",
-    "rut": "77.460.341-7",
-    "pct": "50% / 50% Inm. Todos Los Santos S.A.",
-    "cat": "comercial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inm. e Inv. Rentas Chicureo SpA",
-    "codigo": "",
-    "rut": "76.153.005-4",
-    "pct": "50% / 50% Desarrollos Comerciales Chicureo S.A.",
-    "cat": "comercial",
-    "alerta": "cerrar"
-  },
-  {
-    "nombre": "Rentas Industriales Stgo / Novofarma",
-    "codigo": "1365",
-    "rut": "77.878.834-9",
-    "pct": "50% / 50% Frontal Trust Desarrollos Industriales I FI",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas El Noviciado / Proyecto Easy",
-    "codigo": "1356",
-    "rut": "77.454.601-4",
-    "pct": "50% / 50% Frontal Trust Desarrollos Industriales I FI",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Fondo de Inv. Privado Aconcagua-Confuturo II",
-    "codigo": "1350",
-    "rut": "77.447.468-4",
-    "pct": "50% / 50% Cía. de Seguros Confuturo S.A.",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inversiones Industriales SpA",
-    "codigo": "1375",
-    "rut": "78.226.089-8",
-    "pct": "50% / 50% Invers. Logísticas SpA",
-    "cat": "industrial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Rentas Maipú SpA",
-    "codigo": "",
-    "rut": "",
-    "pct": "50% / 50% Socio por definir",
-    "cat": "industrial",
-    "alerta": "rut"
-  },
-  {
-    "nombre": "Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI",
-    "codigo": "1376",
-    "rut": "",
-    "pct": "35% / 65% Ameris y otros",
-    "cat": "residencial",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Padre Hurtado SpA",
-    "codigo": "1306",
-    "rut": "76.960.346-8",
-    "pct": "50% / 50% Inm. e Inv. Boston SpA",
-    "cat": "colegios",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Tierra del Sol S.A.",
-    "codigo": "",
-    "rut": "96.796.170-1",
-    "pct": "99% / 1% Inmobiliaria Aconcagua S.A.",
-    "cat": "nn",
-    "alerta": ""
-  },
-  {
-    "nombre": "Inmobiliaria Obispo Salas SpA",
-    "codigo": "",
-    "rut": "76.168.212-1",
-    "pct": "50% / 50% Inversiones y Asesorías H y C S.A.",
-    "cat": "nn",
-    "alerta": ""
-  },
-  {
-    "nombre": "Administradora de Fondos de Inv. San Rafael S.A.",
-    "codigo": "",
-    "rut": "76.153.005-4",
-    "pct": "99,9% / 0,1% Inmobiliaria Aconcagua S.A.",
-    "cat": "nn",
-    "alerta": ""
-  },
-  {
-    "nombre": "Sociedad Test X",
-    "codigo": "1000",
-    "rut": "10.152.723-4",
-    "pct": "100%",
-    "cat": "nn",
-    "alerta": ""
-  }
+  {nombre:"Inmobiliaria Laguna del Sol SpA",codigo:"1272",rut:"76.499.908-8",pct:"100%",cat:"tierra",alerta:""},
+  {nombre:"El Pe\u00f1\u00f3n SpA",codigo:"1247",rut:"76.349.965-0",pct:"100%",cat:"tierra",alerta:""},
+  {nombre:"El Pe\u00f1\u00f3n S.A.",codigo:"1120",rut:"96.852.020-2",pct:"99,9995% / 0,0005% Salfa Gesti\u00f3n",cat:"tierra",alerta:""},
+  {nombre:"Inm. e Inv. Rentas Antofagasta SpA",codigo:"1266",rut:"76.458.119-9",pct:"50% / 50% Soc. Av\u00edcola Pollos Tuculas",cat:"tierra",alerta:""},
+  {nombre:"Inmobiliaria Alto Volcanes SpA",codigo:"1305",rut:"76.934.005-k",pct:"50% / 50% Inv. y Asesor\u00edas HyC S.A.",cat:"tierra",alerta:""},
+  {nombre:"Inmobiliaria Borde Blanco SpA",codigo:"1310",rut:"77.009.559-k",pct:"50% / 50% Inm. e Inv. Boston SpA",cat:"tierra",alerta:""},
+  {nombre:"Nueva Inmobiliaria La Portada SpA",codigo:"1255",rut:"76.414.376-0",pct:"50% / 50% Soc. Av\u00edcola Pollos Kutuls",cat:"tierra",alerta:""},
+  {nombre:"Soc. Inm. e Inv. Rentas Quilin SpA",codigo:"1271",rut:"76.509.835-1",pct:"50% / 50% Desarrollos Comerciales Quilin S.A.",cat:"comercial",alerta:""},
+  {nombre:"Inmobiliaria Rentas Vizcachas SpA",codigo:"1304",rut:"76.923.701-1",pct:"50% / 50% Escafe Dos SpA",cat:"comercial",alerta:""},
+  {nombre:"Rentas Costa Laguna SpA",codigo:"1373",rut:"78.210.408-K",pct:"100%",cat:"comercial",alerta:""},
+  {nombre:"Rentas Eyzaguirre SpA",codigo:"1374",rut:"78.192.084-3",pct:"100%",cat:"comercial",alerta:""},
+  {nombre:"Inm. Vivo Santiago SpA",codigo:"1370",rut:"77.073.978-0",pct:"20% / 40% Immob. Puente / 40% C\u00eda. de Seguros Confuturo",cat:"comercial",alerta:""},
+  {nombre:"Rentas Lo Marcoleta SpA",codigo:"1348",rut:"76.460.349-2",pct:"50% / 50% Inm. Todos Los Santos S.A.",cat:"comercial",alerta:""},
+  {nombre:"Rentas Brisas Norte SpA",codigo:"1349",rut:"77.460.341-7",pct:"50% / 50% Inm. Todos Los Santos S.A.",cat:"comercial",alerta:""},
+  {nombre:"Inm. e Inv. Rentas Chicureo SpA",codigo:"",rut:"76.153.005-4",pct:"50% / 50% Desarrollos Comerciales Chicureo S.A.",cat:"comercial",alerta:"cerrar"},
+  {nombre:"Rentas Industriales Stgo / Novofarma",codigo:"1365",rut:"77.878.834-9",pct:"50% / 50% Frontal Trust Desarrollos Industriales I FI",cat:"industrial",alerta:""},
+  {nombre:"Rentas El Noviciado / Proyecto Easy",codigo:"1356",rut:"77.454.601-4",pct:"50% / 50% Frontal Trust Desarrollos Industriales I FI",cat:"industrial",alerta:""},
+  {nombre:"Fondo de Inv. Privado Aconcagua-Confuturo II",codigo:"1350",rut:"77.447.468-4",pct:"50% / 50% C\u00eda. de Seguros Confuturo S.A.",cat:"industrial",alerta:""},
+  {nombre:"Inversiones Industriales SpA",codigo:"1375",rut:"78.226.089-8",pct:"50% / 50% Invers. Log\u00edsticas SpA",cat:"industrial",alerta:""},
+  {nombre:"Rentas Maip\u00fa SpA",codigo:"",rut:"",pct:"50% / 50% Socio por definir",cat:"industrial",alerta:"rut"},
+  {nombre:"Fondo Ameris Rentas y Desarrollo Aconcagua Preferente FI",codigo:"1376",rut:"",pct:"35% / 65% Ameris y otros",cat:"residencial",alerta:""},
+  {nombre:"Inmobiliaria Padre Hurtado SpA",codigo:"1306",rut:"76.960.346-8",pct:"50% / 50% Inm. e Inv. Boston SpA",cat:"colegios",alerta:""},
+  {nombre:"Inmobiliaria Tierra del Sol S.A.",codigo:"",rut:"96.796.170-1",pct:"99% / 1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""},
+  {nombre:"Inmobiliaria Obispo Salas SpA",codigo:"",rut:"76.168.212-1",pct:"50% / 50% Inversiones y Asesor\u00edas H y C S.A.",cat:"nn",alerta:""},
+  {nombre:"Administradora de Fondos de Inv. San Rafael S.A.",codigo:"",rut:"76.153.005-4",pct:"99,9% / 0,1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""}
 ];
 
 function show(id) { document.getElementById(id).style.display = 'flex'; }
