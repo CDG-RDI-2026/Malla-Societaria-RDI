@@ -178,48 +178,10 @@
   #btn-mostrar-todas.expandido { background: #e8f0e8; color: #2E5902; border-color: rgba(46,89,2,0.25); }
 
   #btn-admin { position:fixed; bottom:20px; right:20px; width:36px; height:36px; border-radius:50%; background:rgba(0,0,0,0.1); border:none; cursor:pointer; font-size:16px; color:rgba(0,0,0,0.3); transition:all 0.2s; z-index:1000; display:flex; align-items:center; justify-content:center; }
-  #btn-admin:hover { background:rgba(0,0,0,0.2); transform:scale(1.1); color:rgba(0,0,0,0.6); }
+  #btn-admin:hover { background:rgba(0,0,0,0.2); transform:scale(1.1); }
   .admin-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); z-index:2000; align-items:center; justify-content:center; }
   .admin-overlay.visible { display:flex; }
   .admin-modal { background:#fff; border-radius:12px; padding:28px; width:480px; max-width:95vw; max-height:90vh; overflow-y:auto; box-shadow:0 20px 60px rgba(0,0,0,0.25); position:relative; }
-  .admin-modal h2 { font-size:15px; font-weight:700; color:#1a1a1a; margin-bottom:18px; }
-  .admin-modal .close-btn { position:absolute; top:14px; right:14px; background:none; border:none; font-size:20px; cursor:pointer; color:rgba(0,0,0,0.35); }
-  .admin-modal .close-btn:hover { color:#1a1a1a; }
-  .login-form label { display:block; font-size:10px; font-weight:600; color:#555; margin-bottom:3px; margin-top:12px; text-transform:uppercase; letter-spacing:.05em; }
-  .login-form input { width:100%; padding:8px 11px; border:1px solid rgba(0,0,0,0.18); border-radius:6px; font-size:13px; outline:none; }
-  .login-form input:focus { border-color:#0E3324; }
-  .login-error { color:#e05555; font-size:12px; margin-top:8px; display:none; }
-  .btn-primary { width:100%; margin-top:16px; padding:10px; background:#0E3324; color:#fff; border:none; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
-  .btn-primary:hover { background:#174d36; }
-  .btn-secondary { padding:7px 13px; background:#f0f0f0; color:#444; border:1px solid rgba(0,0,0,0.12); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
-  .btn-secondary:hover { background:#e2e2e2; }
-  .btn-danger { padding:7px 13px; background:#fff0f0; color:#c0392b; border:1px solid rgba(192,57,43,0.25); border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; }
-  .btn-danger:hover { background:#ffe0e0; }
-  .admin-tabs { display:flex; gap:6px; margin-bottom:16px; border-bottom:1px solid rgba(0,0,0,0.08); padding-bottom:10px; }
-  .admin-tab { padding:5px 13px; border-radius:6px; font-size:12px; font-weight:600; cursor:pointer; border:1px solid transparent; background:none; color:#888; }
-  .admin-tab.active { background:#0E3324; color:#fff; }
-  .admin-tab:hover:not(.active) { background:#f0f0f0; color:#333; }
-  .soc-list { display:flex; flex-direction:column; gap:5px; margin-bottom:12px; }
-  .soc-item { display:flex; align-items:center; justify-content:space-between; padding:7px 11px; border-radius:6px; border:1px solid rgba(0,0,0,0.08); background:#fafafa; font-size:12px; }
-  .soc-name { font-weight:600; color:#1a1a1a; }
-  .soc-meta { font-size:10px; color:#888; margin-top:1px; }
-  .soc-item-actions { display:flex; gap:5px; flex-shrink:0; }
-  .cat-badge { font-size:9px; font-weight:700; padding:2px 7px; border-radius:99px; color:#fff; margin-left:5px; }
-  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:9px; }
-  .form-grid .full { grid-column:1/-1; }
-  .form-group label { display:block; font-size:10px; font-weight:600; color:#666; margin-bottom:3px; text-transform:uppercase; letter-spacing:.04em; }
-  .form-group input, .form-group select { width:100%; padding:7px 10px; border:1px solid rgba(0,0,0,0.15); border-radius:5px; font-size:12px; outline:none; background:#fff; }
-  .form-group input:focus, .form-group select:focus { border-color:#0E3324; }
-  .form-actions { display:flex; gap:8px; margin-top:14px; justify-content:flex-end; }
-  .export-section { background:#f5f9f5; border:1px solid rgba(14,51,36,0.15); border-radius:8px; padding:16px; text-align:center; }
-  .export-section p { font-size:12px; color:#555; margin-bottom:12px; line-height:1.5; }
-  .btn-export { padding:10px 22px; background:#1a7f37; color:#fff; border:none; border-radius:6px; font-size:13px; font-weight:600; cursor:pointer; }
-  .btn-export:hover { background:#166d30; }
-  .btn-export:disabled { background:#aaa; cursor:not-allowed; }
-  #publish-status { margin-top:12px; font-size:12px; display:none; padding:10px 14px; border-radius:6px; }
-  #publish-status.loading { background:#f5f5f5; color:#555; border:1px solid rgba(0,0,0,0.1); }
-  #publish-status.success { background:#f0faf0; color:#2E7D32; border:1px solid rgba(46,125,50,0.2); }
-  #publish-status.error   { background:#fff0f0; color:#c0392b; border:1px solid rgba(192,57,43,0.2); }
   .co { background: #C0522A; }
 
 </style>
@@ -474,7 +436,7 @@ function colapsar(wrapId, pillSelector) {
     wrap.getBoundingClientRect();
     wrap.classList.add('collapsed');
     var btn = document.querySelector(pillSelector + ' .cat-toggle');
-    if (btn) btn.style.transform = 'rotate(0deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
   }
 }
 
@@ -484,7 +446,7 @@ function expandir(wrapId, pillSelector) {
   if (wrap.classList.contains('collapsed')) {
     wrap.classList.remove('collapsed');
     var btn = document.querySelector(pillSelector + ' .cat-toggle');
-    if (btn) btn.style.transform = 'rotate(45deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '-'; }
   }
 }
 
@@ -494,7 +456,7 @@ function expandirSub(subId, parentSelector) {
   if (sub.classList.contains('collapsed')) {
     sub.classList.remove('collapsed');
     var btn = document.querySelector(parentSelector + ' .toggle-btn');
-    if (btn) btn.style.transform = 'rotate(45deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '-'; }
   }
 }
 
@@ -506,7 +468,7 @@ function colapsarSub(subId, parentSelector) {
     sub.getBoundingClientRect();
     sub.classList.add('collapsed');
     var btn = document.querySelector(parentSelector + ' .toggle-btn');
-    if (btn) btn.style.transform = 'rotate(0deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
   }
 }
 
@@ -546,7 +508,6 @@ function toggleTodas() {
 
 // Al cargar: colapsar todas las categorías por defecto
 window.addEventListener('load', function() {
-  renderDiagrama();
   setTimeout(function() {
     colapsar('sub-cat-tierra',      '#col-tierra');
     colapsar('sub-cat-comercial',   '#col-comercial');
@@ -621,12 +582,12 @@ function toggleCat(wrapId, pillEl) {
   var isCollapsed = wrap.classList.contains('collapsed');
   if (isCollapsed) {
     wrap.classList.remove('collapsed');
-    if (btn) btn.style.transform = 'rotate(45deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '-'; }
   } else {
     wrap.style.maxHeight = wrap.scrollHeight + 'px';
     wrap.getBoundingClientRect();
     wrap.classList.add('collapsed');
-    if (btn) btn.style.transform = 'rotate(0deg)';
+    if (btn) { btn.style.transform = 'rotate(0deg)'; btn.textContent = '+'; }
   }
   setTimeout(draw, 370);
 }
@@ -665,75 +626,11 @@ function toggleSub(subId, parentNode) {
 window.addEventListener('resize', draw);
 
 
-// ===== RENDERIZAR NODOS PRINCIPALES DESDE SOCIEDADES =====
-// Los sub-nodos (La Portada, Confuturo, Ameris) son hardcodeados en el HTML
-var CODIGOS_CON_SUBNODOS = ['1255', '1350', '1376'];
-
-function renderDiagrama() {
-  var cats = ['tierra','comercial','industrial','residencial','colegios','nn'];
-  var catNodos = {};
-  cats.forEach(function(c) { catNodos[c] = []; });
-  SOCIEDADES.forEach(function(s) {
-    if (catNodos[s.cat] !== undefined) catNodos[s.cat].push(s);
-  });
-
-  var catClass = {tierra:'t', comercial:'cm', industrial:'in', residencial:'re', colegios:'co', nn:'nn'};
-
-  function nodoHTML(s) {
-    var cc = catClass[s.cat] || 'nn';
-    var cls = 'cn ' + cc + (s.alerta === 'cerrar' ? ' cn-cerrar' : '');
-    var idA = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
-    var alA = s.alerta === 'rut'    ? '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>' :
-              s.alerta === 'cerrar' ? '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>' : '';
-
-    // Nodo simple sin sub-nodos
-    return '<div class="' + cls + '"' + idA + '>' +
-      '<div class="nm">' + s.nombre + '</div>' +
-      (s.codigo ? '<div class="cod">[' + s.codigo + ']</div>' : '') +
-      (s.rut    ? '<div class="rut">' + s.rut + '</div>'    : '') +
-      (s.pct    ? '<div class="pct">' + s.pct + '</div>'    : '') +
-      alA + '</div>';
-  }
-
-  cats.forEach(function(cat) {
-    var col = document.getElementById('col-' + cat);
-    if (!col) return;
-    var wrap = col.querySelector('.cat-nodes-wrap');
-    if (!wrap) return;
-    var nodes = wrap.querySelector('.cat-nodes');
-    if (!nodes) return;
-
-    // Obtener los nodos con sub-hijos que ya existen en el DOM (hardcodeados)
-    var subNodosExistentes = {};
-    CODIGOS_CON_SUBNODOS.forEach(function(cod) {
-      // Buscar el wrapper del sub-nodo dentro de esta categoría
-      var subEl = nodes.querySelector('#sub-' + cod);
-      if (subEl) {
-        var parentDiv = subEl.parentNode;
-        subNodosExistentes[cod] = parentDiv.outerHTML;
-      }
-    });
-
-    // Generar HTML de nodos
-    var html = '';
-    catNodos[cat].forEach(function(s) {
-      if (s.codigo && subNodosExistentes[s.codigo]) {
-        // Usar el HTML del sub-nodo existente (preserva funcionalidad)
-        html += subNodosExistentes[s.codigo];
-      } else {
-        html += nodoHTML(s);
-      }
-    });
-    nodes.innerHTML = html;
-  });
-}
-
-
 // ===== ADMIN PANEL =====
 var ADMIN_USER  = 'afacuna';
 var ADMIN_PASS  = 'alan7898';
 var GH_TOKEN    = '';
-var GH_USER     = 'CDG-RDI-2026';
+var GH_USER_GH  = 'CDG-RDI-2026';
 var GH_REPO     = 'Malla-Societaria-RDI';
 var GH_FILE     = 'Malla_RDI_v2.html';
 var GH_BRANCH   = 'main';
@@ -742,6 +639,21 @@ var idxEliminar = -1;
 
 var CAT_COLORES = {tierra:'#7B4F00',comercial:'#1565C0',industrial:'#2E5902',residencial:'#4A3B8C',colegios:'#C0522A',nn:'#4A4A4A'};
 var CAT_LABELS  = {tierra:'Tierra',comercial:'Comercial',industrial:'Industrial',residencial:'Residencial',colegios:'Colegios',nn:'NN'};
+var CAT_CLASS   = {tierra:'t',comercial:'cm',industrial:'in',residencial:'re',colegios:'co',nn:'nn'};
+
+// Sub-nodos hardcodeados - se leen del DOM al cargar
+var SUB_NODOS_HTML = {};
+
+// Al cargar, guardar el HTML de los sub-nodos
+window.addEventListener('load', function() {
+  var codigos = ['1255','1350','1376'];
+  codigos.forEach(function(cod) {
+    var subEl = document.getElementById('sub-' + cod);
+    if (subEl && subEl.parentNode) {
+      SUB_NODOS_HTML[cod] = subEl.parentNode.outerHTML;
+    }
+  });
+});
 
 var SOCIEDADES = [
   {nombre:"Inmobiliaria Laguna del Sol SpA",codigo:"1272",rut:"76.499.908-8",pct:"100%",cat:"tierra",alerta:""},
@@ -770,6 +682,49 @@ var SOCIEDADES = [
   {nombre:"Inmobiliaria Obispo Salas SpA",codigo:"",rut:"76.168.212-1",pct:"50% / 50% Inversiones y Asesor\u00edas H y C S.A.",cat:"nn",alerta:""},
   {nombre:"Administradora de Fondos de Inv. San Rafael S.A.",codigo:"",rut:"76.153.005-4",pct:"99,9% / 0,1% Inmobiliaria Aconcagua S.A.",cat:"nn",alerta:""}
 ];
+
+function nodoSimpleHTML(s) {
+  var cc = CAT_CLASS[s.cat] || 'nn';
+  var cls = 'cn ' + cc + (s.alerta === 'cerrar' ? ' cn-cerrar' : '');
+  var idA = s.alerta === 'rut' ? ' id="nodo-rut"' : s.alerta === 'cerrar' ? ' id="nodo-cerrar"' : '';
+  var alA = s.alerta === 'rut'    ? '<div class="alerta-rut">&#9888; RUT pendiente de creaci&oacute;n</div>' :
+            s.alerta === 'cerrar' ? '<div class="alerta-cerrar">&#128683; Cerrar Sociedad</div>' : '';
+  return '<div class="' + cls + '"' + idA + '>' +
+    '<div class="nm">' + s.nombre + '</div>' +
+    (s.codigo ? '<div class="cod">[' + s.codigo + ']</div>' : '') +
+    (s.rut    ? '<div class="rut">' + s.rut + '</div>' : '') +
+    (s.pct    ? '<div class="pct">' + s.pct + '</div>' : '') +
+    alA + '</div>';
+}
+
+function renderDiagrama() {
+  var cats = ['tierra','comercial','industrial','residencial','colegios','nn'];
+  var catNodos = {};
+  cats.forEach(function(c) { catNodos[c] = []; });
+  SOCIEDADES.forEach(function(s) {
+    if (catNodos[s.cat] !== undefined) catNodos[s.cat].push(s);
+  });
+
+  cats.forEach(function(cat) {
+    var col = document.getElementById('col-' + cat);
+    if (!col) return;
+    var wrap = col.querySelector('.cat-nodes-wrap');
+    if (!wrap) return;
+    var nodes = wrap.querySelector('.cat-nodes');
+    if (!nodes) return;
+
+    var result = '';
+    catNodos[cat].forEach(function(s) {
+      // Si tiene sub-nodos guardados, usar ese HTML
+      if (s.codigo && SUB_NODOS_HTML[s.codigo]) {
+        result += SUB_NODOS_HTML[s.codigo];
+      } else {
+        result += nodoSimpleHTML(s);
+      }
+    });
+    nodes.innerHTML = result;
+  });
+}
 
 function show(id) { document.getElementById(id).style.display = 'flex'; }
 function hide(id) { document.getElementById(id).style.display = 'none'; }
@@ -885,131 +840,36 @@ function pedirEliminar(i) {
   };
 }
 
-async function publicarGitHub() {
-  if (!GH_TOKEN) { alert('Token de GitHub no ingresado. Por favor cierra sesión y vuelve a ingresar con el token.'); return; }
-  var btn = document.getElementById('btn-pub');
-  var status = document.getElementById('pub-status');
-  btn.disabled = true;
-  btn.textContent = 'Publicando...';
-  status.style.display = 'block';
-  status.style.background = '#f5f5f5';
-  status.style.color = '#555';
-  status.style.border = '1px solid rgba(0,0,0,0.1)';
-  status.textContent = 'Conectando con GitHub...';
-
-  try {
-    var apiURL = 'https://api.github.com/repos/' + GH_USER + '/' + GH_REPO + '/contents/' + GH_FILE;
-    var hdrs = {'Authorization':'token ' + GH_TOKEN,'Accept':'application/vnd.github.v3+json','Content-Type':'application/json'};
-
-    status.textContent = 'Descargando archivo actual...';
-    var getRes = await fetch(apiURL, {headers: hdrs});
-    if (!getRes.ok) throw new Error('Error obteniendo archivo: ' + getRes.status);
-    var getJson = await getRes.json();
-    var sha = getJson.sha;
-
-    // Decodificar contenido actual
-    var b64content = getJson.content;
-    // Remover saltos de línea del base64
-    var cleanB64 = '';
-    for (var ci = 0; ci < b64content.length; ci++) {
-      if (b64content[ci] !== '\n' && b64content[ci] !== '\r') cleanB64 += b64content[ci];
-    }
-    var currentHTML = decodeURIComponent(escape(atob(cleanB64)));
-
-    // Reemplazar SOCIEDADES en el string
-    status.textContent = 'Actualizando datos...';
-    renderDiagrama();
-    // Buscar inicio de SOCIEDADES
-    var marca = 'var SOCIEDADES = ';
-    var si = currentHTML.indexOf(marca);
-    if (si === -1) throw new Error('Marcador SOCIEDADES no encontrado.');
-    // Buscar el fin: puede terminar en ]; o ]; o ];\n
-    // Avanzar desde si hasta encontrar el cierre del array + ;
-    var searchFrom = si + marca.length;
-    // Encontrar el primer [ después de la marca
-    var bracketStart = currentHTML.indexOf('[', searchFrom);
-    // Contar brackets para encontrar el cierre
-    var depth = 0;
-    var ei = bracketStart;
-    for (var ci = bracketStart; ci < currentHTML.length; ci++) {
-      if (currentHTML[ci] === '[') depth++;
-      else if (currentHTML[ci] === ']') { depth--; if (depth === 0) { ei = ci + 1; break; } }
-    }
-    // Avanzar hasta después del ; si existe
-    while (ei < currentHTML.length && (currentHTML[ei] === ';' || currentHTML[ei] === ' ')) ei++;
-    var nuevoHTML = currentHTML.substring(0, si) +
-                   'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' +
-                   currentHTML.substring(ei);
-
-    // Encodar a base64
-    status.textContent = 'Subiendo a GitHub...';
-    var enc = new TextEncoder();
-    var bytes = enc.encode(nuevoHTML);
-    var bin = '';
-    for (var bi = 0; bi < bytes.length; bi += 8192) {
-      bin += String.fromCharCode.apply(null, bytes.subarray(bi, bi + 8192));
-    }
-    var newB64 = btoa(bin);
-
-    var putRes = await fetch(apiURL, {
-      method: 'PUT', headers: hdrs,
-      body: JSON.stringify({message: 'Actualización malla ' + new Date().toLocaleString('es-CL'), content: newB64, sha: sha, branch: GH_BRANCH})
-    });
-    if (!putRes.ok) { var ej = await putRes.json(); throw new Error(ej.message || 'Error ' + putRes.status); }
-
-    status.style.background = '#f0faf0';
-    status.style.color = '#2E7D32';
-    status.style.border = '1px solid rgba(46,125,50,0.2)';
-    status.innerHTML = '\u2705 <strong>\u00a1Publicado con \u00e9xito!</strong> El reporte se actualizar\u00e1 en unos segundos.<br>' +
-      '<a href="https://CDG-RDI-2026.github.io/Malla-Societaria-RDI/Malla_RDI_v2.html" target="_blank" style="color:#1a7f37;font-weight:600">Ver reporte \u2192</a>';
-
-  } catch(e) {
-    status.style.background = '#fff0f0';
-    status.style.color = '#c0392b';
-    status.style.border = '1px solid rgba(192,57,43,0.2)';
-    status.innerHTML = '\u274c <strong>Error:</strong> ' + e.message;
-    console.error(e);
-  }
-  btn.disabled = false;
-  btn.textContent = '\u26c5 Publicar en GitHub';
-}
-
 function exportarHTML() {
-  // Primero renderizar el diagrama con los datos actuales
+  // Renderizar diagrama con datos actuales
   renderDiagrama();
-
-  // Tomar el HTML actualizado del DOM
-  var htmlContent = document.documentElement.outerHTML;
-
-  // Actualizar el array SOCIEDADES en el script
-  var marca = 'var SOCIEDADES = ';
-  var si = htmlContent.indexOf(marca);
-  if (si !== -1) {
-    var bracketStart = htmlContent.indexOf('[', si + marca.length);
-    var depth = 0;
-    var ei = bracketStart;
-    for (var ci = bracketStart; ci < htmlContent.length; ci++) {
-      if (htmlContent[ci] === '[') depth++;
-      else if (htmlContent[ci] === ']') { depth--; if (depth === 0) { ei = ci + 1; break; } }
+  setTimeout(function() {
+    // Tomar HTML del DOM actualizado
+    var htmlStr = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    // Actualizar array SOCIEDADES en el script
+    var marca = 'var SOCIEDADES = ';
+    var si = htmlStr.indexOf(marca);
+    if (si !== -1) {
+      var bracketStart = htmlStr.indexOf('[', si + marca.length);
+      var depth = 0; var ei = bracketStart;
+      for (var ci = bracketStart; ci < htmlStr.length; ci++) {
+        if (htmlStr[ci] === '[') depth++;
+        else if (htmlStr[ci] === ']') { depth--; if (depth === 0) { ei = ci + 1; break; } }
+      }
+      while (ei < htmlStr.length && (htmlStr[ei] === ';' || htmlStr[ei] === ' ')) ei++;
+      htmlStr = htmlStr.substring(0, si) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + htmlStr.substring(ei);
     }
-    while (ei < htmlContent.length && (htmlContent[ei] === ';' || htmlContent[ei] === ' ')) ei++;
-    htmlContent = htmlContent.substring(0, si) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + htmlContent.substring(ei);
-  }
-
-  var blob = new Blob(['<!DOCTYPE html>\n' + htmlContent], {type:'text/html;charset=utf-8'});
-  var a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = GH_FILE;
-  a.click();
+    var blob = new Blob([htmlStr], {type:'text/html;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = GH_FILE;
+    a.click();
+  }, 200);
 }
 
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    hide('overlay-login'); hide('overlay-panel'); hide('overlay-confirm');
-  }
-  if (e.key === 'Enter' && document.getElementById('overlay-login').style.display !== 'none') {
-    intentarLogin();
-  }
+  if (e.key === 'Escape') { hide('overlay-login'); hide('overlay-panel'); hide('overlay-confirm'); }
+  if (e.key === 'Enter' && document.getElementById('overlay-login').style.display !== 'none') intentarLogin();
 });
 
 </script>
