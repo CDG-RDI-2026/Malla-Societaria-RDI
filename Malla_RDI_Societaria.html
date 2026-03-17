@@ -850,35 +850,56 @@ function generarHTMLActualizado() {
       alA + '</div>';
   }
 
-  // Clonar DOM y actualizar nodos
-  var parser = new DOMParser();
-  var doc = parser.parseFromString(document.documentElement.outerHTML, 'text/html');
+  // Trabajar directamente con el string HTML
+  var baseHTML = document.documentElement.outerHTML;
 
-  cats.forEach(function(cat) {
-    var col = doc.getElementById('col-' + cat);
-    if (!col) return;
-    var wrap = col.querySelector('.cat-nodes-wrap');
-    if (!wrap) return;
-    var nodes = wrap.querySelector('.cat-nodes');
-    if (!nodes) return;
-    nodes.innerHTML = catNodos[cat].map(nodoHTML).join('\n');
-  });
-
-  // Actualizar array SOCIEDADES en el script
-  var scripts = doc.querySelectorAll('script');
-  for (var i = 0; i < scripts.length; i++) {
-    var sc = scripts[i];
-    var txt = sc.textContent;
-    var start = txt.indexOf('var SOCIEDADES = [');
-    if (start !== -1) {
-      var end = txt.indexOf('\n];', start) + 3;
-      sc.textContent = txt.substring(0, start) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + txt.substring(end);
-      break;
-    }
+  // 1. Actualizar SOCIEDADES en el string
+  var socMarca = 'var SOCIEDADES = [';
+  var socFin   = '\n];';
+  var si = baseHTML.indexOf(socMarca);
+  if (si !== -1) {
+    var ei = baseHTML.indexOf(socFin, si) + socFin.length;
+    baseHTML = baseHTML.substring(0, si) + 'var SOCIEDADES = ' + JSON.stringify(SOCIEDADES, null, 2) + ';' + baseHTML.substring(ei);
   }
 
-  return '<!DOCTYPE html>\n' + doc.documentElement.outerHTML;
+  // 2. Actualizar nodos de cada categoría en el string
+  cats.forEach(function(cat) {
+    var abreMarca = 'id="col-' + cat + '"';
+    var idxCol = baseHTML.indexOf(abreMarca);
+    if (idxCol === -1) return;
+
+    var abreNodes = '<div class="cat-nodes">';
+    var idxNodes = baseHTML.indexOf(abreNodes, idxCol);
+    if (idxNodes === -1) return;
+    idxNodes += abreNodes.length;
+
+    // Encontrar el cierre del cat-nodes contando divs
+    var depth = 1;
+    var pos = idxNodes;
+    while (pos < baseHTML.length && depth > 0) {
+      var nextOpen  = baseHTML.indexOf('<div', pos);
+      var nextClose = baseHTML.indexOf('</div>', pos);
+      if (nextClose === -1) break;
+      if (nextOpen !== -1 && nextOpen < nextClose) {
+        depth++;
+        pos = nextOpen + 4;
+      } else {
+        depth--;
+        if (depth === 0) {
+          // Reemplazar contenido
+          var nuevosNodos = catNodos[cat].map(nodoHTML).join('\n');
+          baseHTML = baseHTML.substring(0, idxNodes) + nuevosNodos + baseHTML.substring(nextClose);
+          break;
+        }
+        pos = nextClose + 6;
+      }
+    }
+  });
+
+  return '<!DOCTYPE html>\n' + baseHTML;
 }
+
+
 
 // PUBLICAR EN GITHUB
 async function publicarGitHub() {
